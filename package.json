@@ -5,11 +5,16 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "start": "react-scripts start",
     "dev": "vite",
-    "build": "vite build",
-    "lint": "eslint .",
+    "build": "vite build && npm run copy-404",
+    "build:dev": "vite build --mode development && npm run copy-404",
+    "copy-404": "node -e \"require('fs').copyFileSync('dist/index.html','dist/404.html')\"",
     "preview": "vite preview",
-    "typecheck": "tsc --noEmit -p tsconfig.app.json"
+    "lint": "eslint .",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
+    "sitemap": "node sitemap.js"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.57.4",
