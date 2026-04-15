@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-nia-ivory text-nia-black font-poppins antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply leading-tight;
+  }
+
+  p {
+    @apply leading-relaxed-custom;
+  }
+
+  ::selection {
+    background-color: #C6A969;
+    color: #0D0D0D;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .ring-nia {
+    box-shadow: 0 0 0 1px #E5E1DB;
+  }
+
+  .ring-nia-gold {
+    box-shadow: 0 0 0 1px #C6A969;
+  }
+
+  .ring-nia-hover {
+    box-shadow: 0 0 0 1px #C6A969, 0 4px 24px rgba(0,0,0,0.04);
+  }
+
+  .editorial-surface {
+    @apply bg-nia-ivory border border-nia-border rounded-lg;
+  }
+
+  .shadow-whisper {
+    box-shadow: rgba(0,0,0,0.04) 0px 4px 24px;
+  }
+
+  .shadow-ring {
+    box-shadow: 0px 0px 0px 1px #E5E1DB;
+  }
+
+  .shadow-ring-hover:hover {
+    box-shadow: 0px 0px 0px 1px #C6A969;
+  }
+}
