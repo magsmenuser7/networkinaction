@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom';
 import { Target, Globe, Users, Lightbulb, Award, TrendingUp, ArrowRight } from 'lucide-react';
 import AnimatedSection from '../components/AnimatedSection';
 import { useSEO } from '../hooks/useSEO';
+import group4 from "../../public/sandeep.jpeg"
+import group5 from "../../public/stagepeople2.jpeg"
 
 const pillars = [
   { icon: Target, title: 'Purposeful Community', desc: 'Every member is handpicked. Every meeting is structured. No noise. Only signal.' },
@@ -40,19 +42,19 @@ export default function Vision() {
       <section className="relative min-h-[70vh] flex items-end pb-24 px-6 lg:px-16 overflow-hidden border-b border-nia-border">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=1920&h=900&dpr=1')" }}
+          style={{ backgroundImage: `url('${group5}')` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/30" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
+        <div className="absolute inset-0 bg-black/50 bg-gradient-r" />
+        {/* <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" /> */}
         <div className="max-w-[1400px] mx-auto w-full relative z-10">
           <AnimatedSection>
-            <p className="text-xs font-light tracking-[0.5em] uppercase text-nia-gold mb-6">
+            <p className="text-xs font-light tracking-[0.5em] uppercase text-[#f07723] mb-6">
               NIA Guntur Vision
             </p>
-            <h1 className="font-playfair text-5xl md:text-6xl lg:text-8xl font-bold text-white mb-6 leading-tight max-w-4xl">
+            <h1 className="font-montserrat text-5xl md:text-6xl lg:text-6xl font-bold text-white mb-6 leading-tight max-w-4xl">
               Building Guntur's
               <br />
-              <span className="text-nia-gold">Business Future.</span>
+              <span className="text-white">Business Future.</span>
             </h1>
             <p className="text-base font-light text-white/60 max-w-2xl leading-relaxed-custom">
               With Amaravathi rising and Guntur positioned at the center of one of India's most exciting development stories, NIA Guntur is building the infrastructure for serious business growth — today.
@@ -70,7 +72,7 @@ export default function Vision() {
               { value: '10', label: 'Countries' },
             ].map((stat) => (
               <div key={stat.label} className="px-12 py-8 text-center">
-                <div className="font-playfair text-4xl font-bold text-nia-gold mb-2">{stat.value}</div>
+                <div className="font-montserrat text-4xl font-bold text-white mb-2">{stat.value}</div>
                 <p className="text-xs font-light text-[#555555] tracking-widest uppercase">{stat.label}</p>
               </div>
             ))}
@@ -82,8 +84,8 @@ export default function Vision() {
         <div className="max-w-[1400px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <AnimatedSection>
-              <p className="text-xs font-light tracking-[0.4em] uppercase text-nia-gold mb-6">Why Guntur. Why Now.</p>
-              <h2 className="font-playfair text-4xl md:text-5xl font-bold text-nia-black mb-8 leading-tight">
+              <p className="text-xs font-light tracking-[0.4em] uppercase text-[#f07723] mb-6">Why Guntur. Why Now.</p>
+              <h2 className="font-montserrat text-4xl md:text-5xl font-bold text-nia-black mb-8 leading-tight">
                 The capital city
                 is rising.
               </h2>
@@ -103,7 +105,7 @@ export default function Vision() {
             <AnimatedSection delay={0.15}>
               <div
                 className="w-full aspect-[4/5] bg-cover bg-center"
-                style={{ backgroundImage: "url('https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=800&h=1000&dpr=1')" }}
+                style={{ backgroundImage: `url('${group4}')` }}
               />
             </AnimatedSection>
           </div>
@@ -113,27 +115,27 @@ export default function Vision() {
       <section className="py-24 px-6 lg:px-16 bg-nia-darker border-y border-nia-border">
         <div className="max-w-[1400px] mx-auto">
           <AnimatedSection className="mb-16">
-            <p className="text-xs font-light tracking-[0.4em] uppercase text-nia-gold mb-4">
+            <p className="text-xs font-light tracking-[0.4em] uppercase text-[#f07723] mb-4">
               Six Pillars
             </p>
-            <h2 className="font-playfair text-4xl md:text-5xl font-bold text-nia-black leading-tight max-w-2xl">
+            <h2 className="font-montserrat text-4xl md:text-5xl font-bold text-nia-black leading-tight max-w-2xl">
               What NIA Guntur
               is built on.
             </h2>
           </AnimatedSection>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-nia-border">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-white">
             {pillars.map((pillar, index) => {
               const Icon = pillar.icon;
               return (
                 <AnimatedSection
                   key={index}
                   delay={index * 0.08}
-                  className="bg-nia-darker border border-nia-border rounded-xl p-8 hover:bg-nia-ivory hover:border-nia-gold/40 hover:shadow-editorial transition-all duration-300 group"
+                  className="bg-nia-darker border border-nia-border rounded-xl p-8 hover:bg-nia-ivory hover:border-[#0e1c40]/40 hover:shadow-editorial transition-all duration-300 group"
                 >
-                  <div className="w-10 h-10 bg-nia-gold/10 border border-nia-gold/20 flex items-center justify-center mb-6 group-hover:bg-nia-gold group-hover:border-nia-gold transition-all duration-300">
-                    <Icon size={16} className="text-nia-gold group-hover:text-white transition-colors duration-300" />
+                  <div className="w-10 h-10 bg-[#0e1c40]/10 border border-[#0e1c40]/20 flex items-center justify-center mb-6 group-hover:bg-[#0e1c40] group-hover:border-[#0e1c40] transition-all duration-300">
+                    <Icon size={16} className="text-[#0e1c40] group-hover:text-white transition-colors duration-300" />
                   </div>
-                  <h3 className="font-playfair text-xl font-bold text-nia-black mb-3">{pillar.title}</h3>
+                  <h3 className="font-montserrat text-xl font-bold text-nia-black mb-3">{pillar.title}</h3>
                   <p className="text-sm font-light text-nia-gray leading-relaxed-custom">{pillar.desc}</p>
                 </AnimatedSection>
               );
@@ -145,10 +147,10 @@ export default function Vision() {
       <section className="py-32 px-6 lg:px-16">
         <div className="max-w-[1400px] mx-auto">
           <AnimatedSection className="mb-16">
-            <p className="text-xs font-light tracking-[0.4em] uppercase text-nia-gold mb-4">
+            <p className="text-xs font-light tracking-[0.4em] uppercase text-[#f07723] mb-4">
               NIA Initiatives
             </p>
-            <h2 className="font-playfair text-4xl md:text-5xl font-bold text-nia-black leading-tight max-w-2xl">
+            <h2 className="font-montserrat text-4xl md:text-5xl font-bold text-nia-black leading-tight max-w-2xl">
               Programs that
               accelerate members.
             </h2>
@@ -158,9 +160,9 @@ export default function Vision() {
               <AnimatedSection
                 key={index}
                 delay={index * 0.07}
-                className="p-8 border border-nia-border rounded-xl hover:border-nia-gold/40 hover:shadow-editorial transition-all duration-300 bg-nia-ivory"
+                className="p-8 border border-nia-border rounded-xl hover:border-[#0e1c40]/40 hover:shadow-editorial transition-all duration-300 bg-nia-ivory"
               >
-                <h3 className="font-playfair text-xl font-bold text-nia-gold mb-3">{item.name}</h3>
+                <h3 className="font-montserrat text-xl font-bold text-[#0e1c40] mb-3">{item.name}</h3>
                 <p className="text-sm font-light text-nia-gray leading-relaxed-custom">{item.desc}</p>
               </AnimatedSection>
             ))}
@@ -171,10 +173,10 @@ export default function Vision() {
       <section className="py-24 px-6 lg:px-16 bg-nia-darker border-y border-nia-border">
         <div className="max-w-[1400px] mx-auto">
           <AnimatedSection className="mb-12">
-            <p className="text-xs font-light tracking-[0.4em] uppercase text-nia-gold mb-4">
+            <p className="text-xs font-light tracking-[0.4em] uppercase text-[#f07723] mb-4">
               NIA Across India
             </p>
-            <h2 className="font-playfair text-4xl md:text-5xl font-bold text-nia-black leading-tight max-w-2xl">
+            <h2 className="font-montserrat text-4xl md:text-5xl font-bold text-nia-black leading-tight max-w-2xl">
               20+ cities.
               One network.
             </h2>
@@ -186,8 +188,8 @@ export default function Vision() {
                   key={city}
                   className={`text-xs px-4 py-2 border font-light tracking-wide ${
                     city === 'Guntur'
-                      ? 'border-nia-gold text-nia-gold bg-nia-gold/5'
-                      : 'border-nia-border text-nia-gray hover:border-nia-gold/40 transition-colors'
+                      ? 'border-[#f07723] text-[#f07723] bg-[#f07723]/5'
+                      : 'border-nia-border text-nia-gray hover:border-[#f07723]/40 transition-colors'
                   }`}
                 >
                   {city}
@@ -201,10 +203,10 @@ export default function Vision() {
       <section className="py-32 px-6 lg:px-16 bg-nia-black">
         <div className="max-w-[800px] mx-auto text-center">
           <AnimatedSection>
-            <p className="text-xs font-light tracking-[0.5em] uppercase text-nia-gold mb-6">
+            <p className="text-xs font-light tracking-[0.5em] uppercase text-[#f07723] mb-6">
               Be Part of the Vision
             </p>
-            <h2 className="font-playfair text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+            <h2 className="font-montserrat text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
               This is a movement,
               <br />
               not a membership.

@@ -45,10 +45,10 @@ export default function PrivacyPolicy() {
       <section className="min-h-[40vh] flex flex-col justify-end px-6 lg:px-12 pb-16 pt-32 border-b border-nia-border">
         <div className="max-w-[1280px] mx-auto w-full">
           <AnimatedSection>
-            <p className="text-xs font-light tracking-[0.4em] uppercase text-nia-gold mb-6">
+            <p className="text-xs font-light tracking-[0.4em] uppercase text-[#f07723] mb-6">
               Legal
             </p>
-            <h1 className="font-playfair text-4xl md:text-5xl lg:text-6xl font-bold text-nia-black leading-tight">
+            <h1 className="font-montserrat text-4xl md:text-5xl lg:text-6xl font-bold text-nia-black leading-tight">
               Privacy Policy
             </h1>
             <p className="text-sm font-light text-nia-muted mt-4">
@@ -74,7 +74,7 @@ export default function PrivacyPolicy() {
                   delay={index * 0.06}
                   className="py-10 border-b border-nia-border"
                 >
-                  <h2 className="font-playfair text-2xl font-bold text-nia-black mb-5">
+                  <h2 className="font-montserrat text-2xl font-bold text-nia-black mb-5">
                     {section.title}
                   </h2>
                   <div className="text-sm font-light text-nia-gray leading-relaxed-custom whitespace-pre-line">

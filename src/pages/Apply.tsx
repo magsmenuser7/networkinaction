@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import AnimatedSection from '../components/AnimatedSection';
 import { useSEO } from '../hooks/useSEO';
-import { supabase } from '../lib/supabase';
+// import { supabase } from '../lib/supabase';
 import { motion } from 'framer-motion';
+import members from "../../public/members2cropped.jpg"
 
 export default function Apply() {
   useSEO({
@@ -38,16 +39,16 @@ export default function Apply() {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const inputClass = 'w-full bg-nia-ivory border border-nia-border rounded-xl px-5 py-4 text-nia-black placeholder-nia-muted focus:border-nia-gold focus:outline-none focus:shadow-ring-gold transition-all duration-200 text-sm font-light';
-  const selectClass = 'w-full bg-nia-ivory border border-nia-border rounded-xl px-5 py-4 text-nia-black focus:border-nia-gold focus:outline-none focus:shadow-ring-gold transition-all duration-200 text-sm font-light appearance-none';
+  const inputClass = 'w-full bg-nia-ivory border border-nia-border rounded-xl px-5 py-4 text-nia-black placeholder-nia-muted focus:border-[#f07723] focus:outline-none focus:shadow-ring-[#f07723] transition-all duration-200 text-sm font-light';
+  const selectClass = 'w-full bg-nia-ivory border border-nia-border rounded-xl px-5 py-4 text-nia-black focus:border-[#f07723] focus:outline-none focus:shadow-ring-[#f07723] transition-all duration-200 text-sm font-light appearance-none';
 
   if (submitStatus === 'success') {
     return (
       <div className="min-h-screen bg-nia-ivory flex items-center justify-center px-6">
         <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} className="text-center max-w-lg">
-          <div className="w-16 h-px bg-nia-gold mx-auto mb-10" />
-          <p className="text-xs tracking-[0.4em] uppercase text-nia-gold mb-6">Application Received</p>
-          <h2 className="font-playfair text-4xl font-bold text-nia-black mb-6">You're closer than you think.</h2>
+          <div className="w-16 h-px bg-[#f07723] mx-auto mb-10" />
+          <p className="text-xs tracking-[0.4em] uppercase text-[#f07723] mb-6">Application Received</p>
+          <h2 className="font-montserrat text-4xl font-bold text-nia-black mb-6">You're closer than you think.</h2>
           <p className="text-base font-light text-nia-gray leading-relaxed-custom mb-8">
             Today, you chose to step forward. That already says something about the kind of leader you are. We'll reach out within 24 hours.
           </p>
@@ -62,18 +63,18 @@ export default function Apply() {
 
   return (
     <div className="min-h-screen bg-nia-ivory">
-      <section className="relative min-h-[50vh] flex items-end pb-20 pt-32 px-6 lg:px-16 overflow-hidden border-b border-nia-border">
+      <section className="relative min-h-[75vh] flex items-end pb-20 pt-32 px-6 lg:px-16 overflow-hidden border-b border-nia-border">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=1920&h=700&dpr=1')" }}
+          style={{ backgroundImage: `url(${members})` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/30" />
+        <div className="absolute inset-0 bg-black/50 bg-gradient-r" />
         <div className="max-w-[1400px] mx-auto w-full relative z-10">
           <AnimatedSection>
-            <p className="text-xs font-light tracking-[0.4em] uppercase text-nia-gold mb-6">Apply for Membership</p>
-            <h1 className="font-playfair text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight max-w-3xl">
+            <p className="text-xs font-light tracking-[0.4em] uppercase text-[#f07723] mb-6">Apply for Membership</p>
+            <h1 className="font-montserrat text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight max-w-3xl">
               The room is
-              <span className="text-nia-gold"> invitation-only.</span>
+              <span className="text-white"> invitation-only.</span>
             </h1>
             <p className="text-base font-light text-white/60 max-w-xl leading-relaxed-custom">
               We review every application personally. Not everyone is accepted. That is by design.
@@ -120,7 +121,7 @@ export default function Apply() {
                     ))}
                     <div className="flex justify-between pt-3 border-t border-nia-border">
                       <span className="font-semibold text-nia-black">Total</span>
-                      <span className="font-semibold text-nia-gold">₹1,27,000 + GST</span>
+                      <span className="font-semibold text-[#0e1c40]">₹1,27,000 + GST</span>
                     </div>
                   </div>
                   <p className="text-xs font-light text-nia-muted mt-4 leading-relaxed-custom">

@@ -14,16 +14,16 @@ export default function Members() {
     <div className="min-h-screen bg-nia-ivory flex flex-col">
       <section className="flex-1 flex items-center justify-center px-6 py-40">
         <AnimatedSection className="text-center max-w-2xl mx-auto">
-          <div className="w-16 h-16 bg-nia-gold/10 border border-nia-gold/20 flex items-center justify-center mx-auto mb-10">
-            <Lock size={24} className="text-nia-gold" />
+          <div className="w-16 h-16 bg-[#f07723]/10 border border-[#f07723]/20 flex items-center justify-center mx-auto mb-10">
+            <Lock size={24} className="text-[#f07723]" />
           </div>
 
-          <p className="text-xs font-light tracking-[0.5em] uppercase text-nia-gold mb-6">Members Area</p>
+          <p className="text-xs font-light tracking-[0.5em] uppercase text-[#f07723] mb-6">Members Area</p>
 
-          <h1 className="font-playfair text-5xl md:text-6xl font-bold text-nia-black mb-6 leading-tight">
+          <h1 className="font-montserrat text-5xl md:text-6xl font-bold text-nia-black mb-6 leading-tight">
             This room is
             <br />
-            <span className="text-nia-gold">coming soon.</span>
+            <span className="text-black">coming soon.</span>
           </h1>
 
           <p className="text-base font-light text-nia-gray max-w-md mx-auto leading-relaxed-custom mb-4">
@@ -43,7 +43,7 @@ export default function Members() {
             </Link>
             <Link
               to="/contact"
-              className="h-[52px] px-10 font-semibold text-sm tracking-widest uppercase border border-nia-border text-nia-black hover:border-nia-gold hover:text-nia-gold transition-all duration-300 inline-flex items-center"
+              className="h-[52px] px-10 font-semibold text-sm tracking-widest uppercase border border-nia-border text-nia-black hover:border-[#f07723] hover:text-[#f07723] transition-all duration-300 inline-flex items-center"
             >
               Contact Us
             </Link>

@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import AnimatedSection from '../components/AnimatedSection';
 import { useSEO } from '../hooks/useSEO';
+import group4 from "../../public/stagepeople2.jpeg"
 
 const whatWeDo = [
   {
@@ -47,13 +48,13 @@ export default function NIAGuntur() {
       <section className="min-h-[60vh] flex flex-col justify-end px-6 lg:px-12 pb-20 pt-32 border-b border-nia-border">
         <div className="max-w-[1280px] mx-auto w-full">
           <AnimatedSection>
-            <p className="text-xs font-light tracking-[0.4em] uppercase text-nia-gold mb-6">
+            <p className="text-xs font-light tracking-[0.4em] uppercase text-[#f07723] mb-6">
               About NIA Guntur
             </p>
-            <h1 className="font-playfair text-5xl md:text-6xl lg:text-7xl font-bold text-nia-black mb-8 leading-tight">
+            <h1 className="font-montserrat text-5xl md:text-6xl lg:text-7xl font-bold text-nia-black mb-8 leading-tight">
               Not another business group.
               <br />
-              <span className="text-nia-gold">A strategic growth ecosystem.</span>
+              <span className="text-black">A strategic growth ecosystem.</span>
             </h1>
             <p className="text-base font-light text-nia-gray max-w-2xl leading-relaxed-custom">
               Guntur doesn't need more networking events. It needs a room where serious people meet with intent. Network In Action Guntur is curated, invite-only, and built for one purpose: measurable business growth through engineered relationships.
@@ -67,10 +68,10 @@ export default function NIAGuntur() {
           <AnimatedSection>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
               <div>
-                <p className="text-xs font-light tracking-[0.3em] uppercase text-nia-gold mb-8">
+                <p className="text-xs font-light tracking-[0.3em] uppercase text-[#f07723] mb-8">
                   Why NIA Guntur Exists
                 </p>
-                <h2 className="font-playfair text-4xl md:text-5xl font-bold text-nia-black mb-8 leading-tight">
+                <h2 className="font-montserrat text-4xl md:text-5xl font-bold text-nia-black mb-8 leading-tight">
                   The ecosystem is
                   <br />
                   fragmented.
@@ -86,7 +87,7 @@ export default function NIAGuntur() {
                 <p className="text-base font-light text-nia-gray leading-relaxed-custom">
                   NIA Guntur is built to fix that. Conversations are intentional. Referrals are meaningful. Collaborations are real. Growth is measurable.
                 </p>
-                <p className="text-sm font-light text-nia-muted leading-relaxed-custom border-l-2 border-nia-gold pl-5">
+                <p className="text-sm font-light text-nia-muted leading-relaxed-custom border-l-2 border-[#f07723] pl-5">
                   This is not scale for the sake of scale. This is precision networking.
                 </p>
               </div>
@@ -98,10 +99,10 @@ export default function NIAGuntur() {
       <section className="py-30 px-6 lg:px-12 bg-nia-darker border-y border-nia-border">
         <div className="max-w-[1280px] mx-auto">
           <AnimatedSection>
-            <p className="text-xs font-light tracking-[0.3em] uppercase text-nia-gold mb-8">
+            <p className="text-xs font-light tracking-[0.3em] uppercase text-[#f07723] mb-8">
               What We Do
             </p>
-            <h2 className="font-playfair text-4xl md:text-5xl font-bold text-nia-black mb-16 leading-tight">
+            <h2 className="font-montserrat text-4xl md:text-5xl font-bold text-nia-black mb-16 leading-tight">
               Four pillars.
               <br />
               One purpose.
@@ -110,7 +111,7 @@ export default function NIAGuntur() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-nia-border">
             {whatWeDo.map((item, index) => (
               <AnimatedSection key={index} delay={index * 0.1} className="bg-nia-darker p-8 hover:bg-nia-dark transition-colors duration-300">
-                <h3 className="font-playfair text-2xl font-bold text-nia-gold mb-5">
+                <h3 className="font-montserrat text-2xl font-bold text-[#f07723] mb-5">
                   {item.word}
                 </h3>
                 <p className="text-sm font-light text-nia-gray leading-relaxed-custom">
@@ -125,10 +126,10 @@ export default function NIAGuntur() {
       <section className="py-30 px-6 lg:px-12">
         <div className="max-w-[1280px] mx-auto">
           <AnimatedSection>
-            <p className="text-xs font-light tracking-[0.3em] uppercase text-nia-gold mb-8">
+            <p className="text-xs font-light tracking-[0.3em] uppercase text-[#f07723] mb-8">
               What Makes NIA Different
             </p>
-            <h2 className="font-playfair text-4xl md:text-5xl font-bold text-nia-black mb-16 leading-tight">
+            <h2 className="font-montserrat text-4xl md:text-5xl font-bold text-nia-black mb-16 leading-tight">
               Most communities fail because they
               <br />
               optimise for numbers.
@@ -157,10 +158,10 @@ export default function NIAGuntur() {
       <section className="py-30 px-6 lg:px-12 bg-nia-darker border-y border-nia-border">
         <div className="max-w-[1280px] mx-auto">
           <AnimatedSection>
-            <p className="text-xs font-light tracking-[0.3em] uppercase text-nia-gold mb-8">
+            <p className="text-xs font-light tracking-[0.3em] uppercase text-[#f07723] mb-8">
               Meeting Structure
             </p>
-            <h2 className="font-playfair text-4xl md:text-5xl font-bold text-nia-black mb-6 leading-tight">
+            <h2 className="font-montserrat text-4xl md:text-5xl font-bold text-nia-black mb-6 leading-tight">
               Structure is the product.
             </h2>
             <p className="text-base font-light text-nia-gray max-w-2xl mb-16 leading-relaxed-custom">
@@ -174,7 +175,7 @@ export default function NIAGuntur() {
                   {item.num}
                 </div>
                 <h3 className="text-lg font-semibold text-nia-black mb-1">{item.label}</h3>
-                <p className="text-xs tracking-widest uppercase text-nia-gold mb-4">{item.mode} · {item.freq}</p>
+                <p className="text-xs tracking-widest uppercase text-[#f07723] mb-4">{item.mode} · {item.freq}</p>
                 <p className="text-sm font-light text-nia-gray leading-relaxed-custom">{item.desc}</p>
               </AnimatedSection>
             ))}
@@ -186,10 +187,10 @@ export default function NIAGuntur() {
         <div className="max-w-[1280px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <AnimatedSection>
-              <p className="text-xs font-light tracking-[0.3em] uppercase text-nia-gold mb-8">
+              <p className="text-xs font-light tracking-[0.3em] uppercase text-[#f07723] mb-8">
                 The Story of NIA
               </p>
-              <h2 className="font-playfair text-4xl md:text-5xl font-bold text-nia-black mb-8 leading-tight">
+              <h2 className="font-montserrat text-4xl md:text-5xl font-bold text-nia-black mb-8 leading-tight">
                 Founded 2015.
                 <br />
                 Now in 10 countries.
@@ -212,7 +213,7 @@ export default function NIAGuntur() {
                   {['Guntur', 'Hyderabad', 'Vizag', 'Bengaluru', 'Coimbatore', 'Nagpur', 'Delhi NCR', 'Noida', 'Chandigarh', 'Bhopal', 'Rajkot', 'Surat', 'Vadodara', 'Indore', 'Kolkata', 'Guwahati', 'Imphal'].map((city) => (
                     <span
                       key={city}
-                      className={`text-xs font-light px-3 py-1.5 border ${city === 'Guntur' ? 'border-nia-gold text-nia-gold' : 'border-nia-border text-nia-muted'}`}
+                      className={`text-xs font-light px-3 py-1.5 border ${city === 'Guntur' ? 'border-[#f07723] text-[#f07723]' : 'border-nia-border text-nia-muted'}`}
                     >
                       {city}
                     </span>
@@ -228,10 +229,10 @@ export default function NIAGuntur() {
       <section className="py-20 px-6 lg:px-12 bg-nia-darker border-t border-nia-border">
         <div className="max-w-[1280px] mx-auto text-center">
           <AnimatedSection>
-            <p className="text-xs font-light tracking-[0.4em] uppercase text-nia-gold mb-6">
+            <p className="text-xs font-light tracking-[0.4em] uppercase text-[#f07723] mb-6">
               Our Vision
             </p>
-            <h2 className="font-playfair text-3xl md:text-4xl font-bold text-nia-black mb-6 max-w-3xl mx-auto leading-tight">
+            <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-nia-black mb-6 max-w-3xl mx-auto leading-tight">
               To build a dynamic ecosystem where individuals and organizations converge to foster collaboration, fuel growth and positively impact 1 million+ lives.
             </h2>
             <div className="mt-12">

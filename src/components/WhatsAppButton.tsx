@@ -44,7 +44,7 @@ export default function WhatsAppButton() {
             className="bg-[#141414] border border-[#252525] p-4 max-w-[260px] shadow-xl"
           >
             <div className="flex items-start justify-between gap-3 mb-3">
-              <p className="text-xs font-light text-nia-gold tracking-wider uppercase">NIA Guntur</p>
+              <p className="text-xs font-light text-[#f07723] tracking-wider uppercase">NIA Guntur</p>
               <button onClick={handleDismiss} className="text-[#666666] hover:text-white transition-colors shrink-0">
                 <X size={14} />
               </button>

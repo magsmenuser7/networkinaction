@@ -84,7 +84,7 @@ export default function Event() {
             <p className="text-xs font-light tracking-[0.4em] uppercase text-nia-gold mb-8">
               BREW Connect — NIA Guntur
             </p>
-            <h1 className="font-playfair text-5xl md:text-6xl lg:text-7xl font-bold text-nia-ivory mb-6 leading-tight">
+            <h1 className="font-montserrat text-5xl md:text-6xl lg:text-7xl font-bold text-nia-ivory mb-6 leading-tight">
               Business. Relationships.
               <br />
               <span className="text-nia-gold">Elevated Wins.</span>
@@ -103,7 +103,7 @@ export default function Event() {
                 { value: String(timeLeft.seconds).padStart(2, '0'), label: 'Seconds' },
               ].map((item) => (
                 <div key={item.label} className="bg-nia-darker p-6 text-center">
-                  <div className="font-playfair text-4xl md:text-5xl font-bold text-nia-ivory mb-1">
+                  <div className="font-montserrat text-4xl md:text-5xl font-bold text-nia-ivory mb-1">
                     {item.value}
                   </div>
                   <div className="text-xs font-light text-nia-muted uppercase tracking-widest">
@@ -141,7 +141,7 @@ export default function Event() {
             <p className="text-xs font-light tracking-[0.3em] uppercase text-nia-gold mb-8">
               Event Agenda
             </p>
-            <h2 className="font-playfair text-4xl md:text-5xl font-bold text-nia-ivory mb-16 leading-tight">
+            <h2 className="font-montserrat text-4xl md:text-5xl font-bold text-nia-ivory mb-16 leading-tight">
               Two hours.
               <br />
               Built for momentum.
@@ -153,7 +153,7 @@ export default function Event() {
               <AnimatedSection key={index} delay={index * 0.08} className="bg-nia-darker p-6 md:p-8 hover:bg-nia-dark transition-colors duration-300">
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
                   <div>
-                    <p className="font-playfair text-lg font-bold text-nia-gold">{item.time}</p>
+                    <p className="font-montserrat text-lg font-bold text-nia-gold">{item.time}</p>
                   </div>
                   <div className="md:col-span-3">
                     <h3 className="text-lg font-semibold text-nia-ivory mb-1">{item.activity}</h3>
@@ -179,7 +179,7 @@ export default function Event() {
             <p className="text-xs font-light tracking-[0.3em] uppercase text-nia-gold mb-8">
               Let's Talk
             </p>
-            <h2 className="font-playfair text-4xl md:text-5xl font-bold text-nia-ivory mb-6 leading-tight">
+            <h2 className="font-montserrat text-4xl md:text-5xl font-bold text-nia-ivory mb-6 leading-tight">
               Six questions
               <br />
               worth answering.
@@ -213,7 +213,7 @@ export default function Event() {
                 <p className="text-xs font-light tracking-[0.3em] uppercase text-nia-gold mb-8">
                   Venue
                 </p>
-                <h2 className="font-playfair text-4xl font-bold text-nia-ivory mb-8 leading-tight">
+                <h2 className="font-montserrat text-4xl font-bold text-nia-ivory mb-8 leading-tight">
                   ITC Welcomhotel
                 </h2>
                 <div className="flex items-start gap-3 mb-6">
@@ -245,7 +245,7 @@ export default function Event() {
             <p className="text-xs font-light tracking-[0.4em] uppercase text-nia-muted mb-8">
               Attendance is by invitation only
             </p>
-            <h2 className="font-playfair text-4xl md:text-5xl font-bold text-nia-ivory mb-6 leading-tight">
+            <h2 className="font-montserrat text-4xl md:text-5xl font-bold text-nia-ivory mb-6 leading-tight">
               Secure your seat.
             </h2>
             <p className="text-base font-light text-nia-gray max-w-md mx-auto mb-12 leading-relaxed-custom">

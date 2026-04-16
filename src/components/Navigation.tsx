@@ -2,6 +2,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { useState, useEffect, useRef } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import logo from "../../public/nia-logo-guntur.png"
 
 const cityPartnerLinks = [
   { name: 'Sandeep N', path: '/city-partners/sandeep-n' },
@@ -54,16 +55,19 @@ export default function Navigation() {
           isScrolled
             ? 'bg-nia-ivory/96 backdrop-blur-md border-b border-nia-border shadow-whisper'
             : 'bg-nia-ivory/96 backdrop-blur-md border-b border-nia-border'
+            // ? 'bg-transparent backdrop-blur-2xl border-b border-nia-border shadow-whisper'
+            // : 'bg-white'
         }`}
       >
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-10 flex items-center justify-between h-16 lg:h-[70px]">
-          <Link to="/" className="flex items-center gap-3 shrink-0">
-            <img src="/logo_nia_guntu.png" alt="NIA Guntur" className="h-8 w-auto" />
-            <div className="hidden sm:flex flex-col">
-              <span className="text-xs font-semibold tracking-[0.25em] uppercase text-nia-black">NIA</span>
-              <span className="text-[9px] font-light tracking-[0.35em] uppercase text-nia-muted -mt-0.5">Guntur</span>
-            </div>
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-10 flex items-center justify-between h-16 lg:h-[70px] text-black">
+
+          <div className="z-199">
+          
+          <Link to="/" className="flex items-center gap-3 z-100 shrink-0">
+            <img src={logo} alt="NIA Guntur" className="h-8 w-auto" />
+            
           </Link>
+          </div>
 
           <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) =>
@@ -72,7 +76,7 @@ export default function Navigation() {
                   <button
                     onClick={() => setDropdownOpen((prev) => !prev)}
                     className={`flex items-center gap-1 text-xs font-light tracking-[0.2em] uppercase transition-colors duration-200 ${
-                      isActive(link.path) ? 'text-nia-gold' : 'text-nia-black/60 hover:text-nia-black'
+                      isActive(link.path) ? 'text-[#0e1c40]' : 'text-nia-black hover:text-nia-black/80'
                     }`}
                   >
                     {link.name}
@@ -92,7 +96,7 @@ export default function Navigation() {
                       >
                         <Link
                           to={link.path}
-                          className="block px-5 py-3.5 text-xs tracking-[0.2em] uppercase font-light text-nia-black/60 hover:bg-nia-darker hover:text-nia-gold transition-colors border-b border-nia-border"
+                          className="block px-5 py-3.5 text-xs tracking-[0.2em] uppercase font-light text-nia-black/60 hover:bg-nia-darker hover:text-[#0e1c40] transition-colors border-b border-nia-border"
                         >
                           All Partners
                         </Link>
@@ -101,7 +105,7 @@ export default function Navigation() {
                             key={child.path}
                             to={child.path}
                             className={`block px-5 py-3.5 text-xs tracking-[0.2em] uppercase font-light transition-colors hover:bg-nia-darker ${
-                              isActive(child.path) ? 'text-nia-gold' : 'text-nia-black/60 hover:text-nia-gold'
+                              isActive(child.path) ? 'text-[#0e1c40]' : 'text-nia-black/60 hover:text-[#f07723]'
                             }`}
                           >
                             {child.name}
@@ -116,7 +120,7 @@ export default function Navigation() {
                   key={link.name}
                   to={link.path}
                   className={`text-xs font-light tracking-[0.2em] uppercase transition-colors duration-200 ${
-                    isActive(link.path) ? 'text-nia-gold' : 'text-nia-black/60 hover:text-nia-black'
+                    isActive(link.path) ? 'text-[#0e1c40]' : 'text-nia-black hover:text-nia-black'
                   }`}
                 >
                   {link.name}
@@ -159,7 +163,7 @@ export default function Navigation() {
                   <Link
                     to={link.path}
                     className={`block py-4 text-sm font-light tracking-[0.2em] uppercase border-b border-nia-border transition-colors ${
-                      isActive(link.path) ? 'text-nia-gold' : 'text-nia-black'
+                      isActive(link.path) ? 'text-[#0e1c40]' : 'text-nia-black'
                     }`}
                   >
                     {link.name}
@@ -169,7 +173,7 @@ export default function Navigation() {
                       key={child.path}
                       to={child.path}
                       className={`block py-3 pl-5 text-xs font-light tracking-widest uppercase border-b border-nia-border transition-colors ${
-                        isActive(child.path) ? 'text-nia-gold' : 'text-nia-muted'
+                        isActive(child.path) ? 'text-[#0e1c40]' : 'text-nia-black/60 hover:text-[#f07723]'
                       }`}
                     >
                       {child.name}

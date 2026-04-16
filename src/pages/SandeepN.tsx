@@ -49,17 +49,17 @@ export default function SandeepN() {
               City Partners
             </Link>
             <span className="text-nia-border">/</span>
-            <span className="text-xs tracking-[0.3em] uppercase text-nia-gold">Sandeep N</span>
+            <span className="text-xs tracking-[0.3em] uppercase text-[#f07723]">Sandeep N</span>
           </div>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9 }}
           >
-            <p className="text-xs font-light tracking-[0.5em] uppercase text-nia-gold mb-5">
+            <p className="text-xs font-light tracking-[0.5em] uppercase text-[#f07723] mb-5">
               City Partner — NIA Guntur
             </p>
-            <h1 className="font-playfair text-5xl md:text-6xl lg:text-7xl font-bold text-nia-black leading-tight mb-5">
+            <h1 className="font-montserrat text-5xl md:text-6xl lg:text-7xl font-bold text-nia-black leading-tight mb-5">
               Sandeep N.
             </h1>
             <p className="text-sm font-light text-nia-muted tracking-widest uppercase mb-8">
@@ -82,7 +82,7 @@ export default function SandeepN() {
               { value: 'TedX', label: 'Speaker' },
             ].map((stat) => (
               <div key={stat.label} className="px-8 py-8 text-center">
-                <div className="font-playfair text-3xl font-bold text-nia-gold mb-1">{stat.value}</div>
+                <div className="font-montserrat text-3xl font-bold text-white mb-1">{stat.value}</div>
                 <p className="text-xs font-light text-[#555555] tracking-widest uppercase">{stat.label}</p>
               </div>
             ))}
@@ -94,8 +94,8 @@ export default function SandeepN() {
         <div className="max-w-[1400px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
             <AnimatedSection>
-              <p className="text-xs font-light tracking-[0.4em] uppercase text-nia-gold mb-6">The Story</p>
-              <h2 className="font-playfair text-4xl md:text-5xl font-bold text-nia-black mb-10 leading-tight">
+              <p className="text-xs font-light tracking-[0.4em] uppercase text-[#f07723] mb-6">The Story</p>
+              <h2 className="font-montserrat text-4xl md:text-5xl font-bold text-nia-black mb-10 leading-tight">
                 Where brand strategy
                 <br />meets legal foresight.
               </h2>
@@ -118,8 +118,8 @@ export default function SandeepN() {
       <section className="py-24 px-6 lg:px-16 bg-nia-darker border-y border-nia-border">
         <div className="max-w-[1400px] mx-auto">
           <AnimatedSection className="mb-14">
-            <p className="text-xs font-light tracking-[0.4em] uppercase text-nia-gold mb-4">What Makes Him Different</p>
-            <h2 className="font-playfair text-4xl font-bold text-nia-black leading-tight">The rare intersection.</h2>
+            <p className="text-xs font-light tracking-[0.4em] uppercase text-[#f07723] mb-4">What Makes Him Different</p>
+            <h2 className="font-montserrat text-4xl font-bold text-nia-black leading-tight">The rare intersection.</h2>
           </AnimatedSection>
           <div className="space-y-0 border-t border-nia-border">
             {differentiators.map((item, index) => (
@@ -144,35 +144,35 @@ export default function SandeepN() {
       <section className="py-32 px-6 lg:px-16">
         <div className="max-w-[1400px] mx-auto">
           <AnimatedSection className="mb-14">
-            <p className="text-xs font-light tracking-[0.4em] uppercase text-nia-gold mb-4">Ventures</p>
-            <h2 className="font-playfair text-4xl font-bold text-nia-black leading-tight">What he has built.</h2>
+            <p className="text-xs font-light tracking-[0.4em] uppercase text-[#f07723] mb-4">Ventures</p>
+            <h2 className="font-montserrat text-4xl font-bold text-nia-black leading-tight">What he has built.</h2>
           </AnimatedSection>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-nia-border">
             {ventures.map((venture) => (
-              <AnimatedSection key={venture.name} className="bg-nia-ivory border border-nia-border rounded-xl p-10 hover:bg-nia-darker hover:border-nia-gold/40 hover:shadow-editorial transition-all duration-300">
-                <h3 className="font-playfair text-2xl font-bold text-nia-gold mb-4">{venture.name}</h3>
+              <AnimatedSection key={venture.name} className="bg-nia-ivory border border-nia-border rounded-xl p-10 hover:bg-nia-darker hover:border-[#f07723]/40 hover:shadow-editorial transition-all duration-300">
+                <h3 className="font-montserrat text-2xl font-bold text-[#0e1c40] mb-4">{venture.name}</h3>
                 <p className="text-sm font-light text-nia-gray leading-relaxed-custom mb-6">{venture.desc}</p>
                 {venture.url && (
                   <a
                     href={venture.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-xs tracking-widest uppercase text-nia-black hover:text-nia-gold transition-colors font-light"
+                    className="inline-flex items-center gap-2 text-xs tracking-widest uppercase text-nia-black hover:text-[#f07723] transition-colors font-light"
                   >
                     Visit {venture.name} <ExternalLink size={12} />
                   </a>
                 )}
               </AnimatedSection>
             ))}
-            <AnimatedSection className="bg-nia-ivory border border-nia-border rounded-xl p-10 hover:bg-nia-darker hover:border-nia-gold/40 hover:shadow-editorial transition-all duration-300" delay={0.1}>
-              <h3 className="font-playfair text-2xl font-bold text-nia-gold mb-4">His Role in NIA Guntur</h3>
+            <AnimatedSection className="bg-nia-ivory border border-nia-border rounded-xl p-10 hover:bg-nia-darker hover:border-[#f07723]/40 hover:shadow-editorial transition-all duration-300" delay={0.1}>
+              <h3 className="font-montserrat text-2xl font-bold text-[#0e1c40] mb-4">His Role in NIA Guntur</h3>
               <p className="text-sm font-light text-nia-gray leading-relaxed-custom">
                 Inside NIA Guntur, Sandeep elevates the thinking of every member in the room. Strategy is not a department — it is a mindset every business owner here must develop. He brings that mindset to every meeting.
               </p>
             </AnimatedSection>
             <AnimatedSection className="bg-nia-black p-10" delay={0.15}>
-              <p className="text-xs tracking-[0.4em] uppercase text-nia-gold mb-4">A Thought</p>
-              <p className="font-playfair text-xl text-white leading-relaxed italic">
+              <p className="text-xs tracking-[0.4em] uppercase text-[#f07723] mb-4">A Thought</p>
+              <p className="font-montserrat text-xl text-white leading-relaxed italic">
                 "The next generation of enduring brands will not come from convention — but from those willing to challenge it."
               </p>
               <p className="text-xs text-[#555555] tracking-widest uppercase mt-4">— Sandeep N</p>
@@ -187,7 +187,7 @@ export default function SandeepN() {
             <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
               <div>
                 <p className="text-xs tracking-[0.3em] uppercase text-[#555555] mb-3">Connect with Sandeep</p>
-                <a href="tel:+919703356332" className="font-playfair text-3xl font-bold text-white hover:text-nia-gold transition-colors">
+                <a href="tel:+919703356332" className="font-montserrat text-3xl font-bold text-white hover:text-[#f07723] transition-colors">
                   +91 97033 56332
                 </a>
               </div>

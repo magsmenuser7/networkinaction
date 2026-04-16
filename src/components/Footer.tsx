@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { MapPin, Phone, Mail, Instagram, Linkedin } from 'lucide-react';
+import logo from "../../public/nia-logo-guntur.png"
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -10,14 +11,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="lg:col-span-2">
             <img
-              src="/logo_nia_guntu.png"
+              src={logo}
               alt="NIA Guntur"
               className="h-10 mb-6 brightness-0 invert"
             />
             <p className="text-sm font-light text-[#777777] leading-relaxed-custom max-w-sm mb-6">
               Network In Action Guntur is an invite-only business community for serious entrepreneurs who believe the right room changes everything.
             </p>
-            <p className="text-xs tracking-[0.3em] uppercase text-nia-gold font-light mb-8">
+            <p className="text-xs tracking-[0.3em] uppercase text-[#f07723] font-light mb-8">
               "The Right Room Changes Everything"
             </p>
             <div className="flex items-center gap-4">
@@ -25,7 +26,7 @@ export default function Footer() {
                 href="https://www.instagram.com/niaaguntur"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 border border-[#252525] rounded-lg flex items-center justify-center text-[#555555] hover:text-nia-gold hover:border-nia-gold/40 transition-all duration-200"
+                className="w-9 h-9 border border-[#252525] rounded-lg flex items-center justify-center text-[#555555] hover:text-[#f07723] hover:border-[#f07723]/40 transition-all duration-200"
                 aria-label="Instagram"
               >
                 <Instagram size={14} />
@@ -34,7 +35,7 @@ export default function Footer() {
                 href="https://www.linkedin.com/company/niaaguntur"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 border border-[#252525] rounded-lg flex items-center justify-center text-[#555555] hover:text-nia-gold hover:border-nia-gold/40 transition-all duration-200"
+                className="w-9 h-9 border border-[#252525] rounded-lg flex items-center justify-center text-[#555555] hover:text-[#f07723] hover:border-[#f07723]/40 transition-all duration-200"
                 aria-label="LinkedIn"
               >
                 <Linkedin size={14} />
@@ -77,7 +78,7 @@ export default function Footer() {
             </h4>
             <ul className="space-y-5">
               <li className="flex items-start gap-3">
-                <MapPin size={14} className="text-nia-gold mt-0.5 shrink-0" />
+                <MapPin size={14} className="text-[#f07723] mt-0.5 shrink-0" />
                 <address className="not-italic text-sm font-light text-[#777777] leading-relaxed">
                   4th Floor, Icon Spaces,<br />
                   6th Ln, Brodipet,<br />
@@ -85,7 +86,7 @@ export default function Footer() {
                 </address>
               </li>
               <li className="flex items-start gap-3">
-                <Phone size={14} className="text-nia-gold shrink-0 mt-0.5" />
+                <Phone size={14} className="text-[#f07723] shrink-0 mt-0.5" />
                 <div className="space-y-1.5">
                   <a
                     href="tel:+919121315444"
@@ -108,7 +109,7 @@ export default function Footer() {
                 </div>
               </li>
               <li className="flex items-center gap-3">
-                <Mail size={14} className="text-nia-gold shrink-0" />
+                <Mail size={14} className="text-[#f07723] shrink-0" />
                 <a
                   href="mailto:guntur@networkinaction.com"
                   className="text-sm font-light text-[#777777] hover:text-white transition-colors"

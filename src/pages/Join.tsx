@@ -57,10 +57,10 @@ export default function Join() {
   };
 
   const inputClass =
-    'w-full bg-nia-ivory border border-nia-border rounded-xl px-5 py-4 text-nia-black placeholder-nia-muted focus:border-nia-gold focus:outline-none transition-all duration-200 text-sm font-light';
+    'w-full bg-nia-ivory border border-nia-border rounded-xl px-5 py-4 text-nia-black placeholder-nia-muted focus:border-[#f07723] focus:outline-none transition-all duration-200 text-sm font-light';
 
   const selectClass =
-    'w-full bg-nia-ivory border border-nia-border rounded-xl px-5 py-4 text-nia-black focus:border-nia-gold focus:outline-none transition-all duration-200 text-sm font-light appearance-none';
+    'w-full bg-nia-ivory border border-nia-border rounded-xl px-5 py-4 text-nia-black focus:border-[#f07723] focus:outline-none transition-all duration-200 text-sm font-light appearance-none';
 
   if (submitStatus === 'success') {
     return (
@@ -70,11 +70,11 @@ export default function Join() {
           animate={{ opacity: 1, y: 0 }}
           className="text-center max-w-lg"
         >
-          <div className="w-16 h-px bg-nia-gold mx-auto mb-10" />
-          <p className="text-xs tracking-[0.4em] uppercase text-nia-gold mb-6">
+          <div className="w-16 h-px bg-[#f07723] mx-auto mb-10" />
+          <p className="text-xs tracking-[0.4em] uppercase text-[#f07723] mb-6">
             Application Received
           </p>
-          <h2 className="font-playfair text-4xl font-bold text-nia-black mb-6">
+          <h2 className="font-montserrat text-4xl font-bold text-nia-black mb-6">
             You're closer than you think.
           </h2>
           <p className="text-base font-light text-nia-gray leading-relaxed-custom mb-8">
@@ -94,10 +94,10 @@ export default function Join() {
       <section className="min-h-[45vh] flex flex-col justify-end px-6 lg:px-12 pb-20 pt-32">
         <div className="max-w-[1280px] mx-auto w-full">
           <AnimatedSection>
-            <p className="text-xs font-light tracking-[0.4em] uppercase text-nia-gold mb-6">
+            <p className="text-xs font-light tracking-[0.4em] uppercase text-[#f07723] mb-6">
               Request Access
             </p>
-            <h1 className="font-playfair text-5xl md:text-6xl lg:text-7xl font-bold text-nia-black mb-6 leading-tight">
+            <h1 className="font-montserrat text-5xl md:text-6xl lg:text-7xl font-bold text-nia-black mb-6 leading-tight">
               The room is
               <br />
               invitation-only.
@@ -157,7 +157,7 @@ export default function Join() {
                     </div>
                     <div className="flex justify-between pt-3 border-t border-nia-border">
                       <span className="font-semibold text-nia-black">Total</span>
-                      <span className="font-semibold text-nia-gold">₹1,27,000 + GST</span>
+                      <span className="font-semibold text-[#f07723]">₹1,27,000 + GST</span>
                     </div>
                   </div>
                   <p className="text-xs font-light text-nia-muted mt-4 leading-relaxed-custom">

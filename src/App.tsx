@@ -13,13 +13,18 @@ import Contact from './pages/Contact';
 import Apply from './pages/Apply';
 import Members from './pages/Members';
 import PrivacyPolicy from './pages/PrivacyPolicy';
+import ScrollToTop from './components/ScrollToTop';
 
 function AnimatedRoutes() {
   const location = useLocation();
 
   return (
-    <AnimatePresence mode="wait">
+    
+    <AnimatePresence>
+       <ScrollToTop />
+     
       <Routes location={location} key={location.pathname}>
+        
         <Route path="/" element={<PT><Home /></PT>} />
         <Route path="/about-nia" element={<PT><NIAGuntur /></PT>} />
         <Route path="/vision" element={<PT><Vision /></PT>} />

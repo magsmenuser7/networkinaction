@@ -28,9 +28,9 @@ export default function Button({
     filled:
       'bg-nia-orange text-nia-white hover:bg-nia-orange/90 hover:shadow-[0_0_24px_rgba(232,119,34,0.3)] border border-nia-orange',
     ghost:
-      'bg-transparent text-nia-black/70 border border-nia-black/20 hover:border-nia-gold hover:text-nia-gold',
+      'bg-transparent text-nia-black/70 border border-nia-black/20 hover:border-[#f07723] hover:text-[#f07723]',
     gold:
-      'bg-nia-gold text-nia-black hover:bg-nia-gold/90 hover:shadow-[0_0_24px_rgba(198,169,105,0.3)] border border-nia-gold',
+      'bg-[#f07723] text-nia-black hover:bg-[#f07723]/90 hover:shadow-[0_0_24px_rgba(198,169,105,0.3)] border border-[#f07723]',
   };
 
   const classes = `${baseClasses} ${variantClasses[variant]} ${className}`;
