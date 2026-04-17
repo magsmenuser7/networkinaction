@@ -2,8 +2,8 @@ import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import AnimatedSection from '../components/AnimatedSection';
 import { useSEO } from '../hooks/useSEO';
-import sandeepcropedpic from "../../public/sandeepcroppedpic.jpg"
-import vinodcroppedpic from "../../public/vinodcroppedpic.png"
+import sandeepcropedpic from "../../public/sandeepsircroppedimage.jpg"
+import vinodcroppedpic from "../../public/vinodsircroppedpic.png"
 const partners = [
   {
     name: 'Sandeep N',

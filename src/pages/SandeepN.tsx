@@ -33,7 +33,7 @@ export default function SandeepN() {
   return (
     <div className="min-h-screen bg-nia-ivory">
       <section className="pt-16 min-h-screen grid grid-cols-1 lg:grid-cols-2">
-        <div className="relative h-[55vh] lg:h-full overflow-hidden lg:order-1 order-2">
+        <div className="relative h-[55vh] lg:h-[95vh] overflow-hidden lg:order-1 order-2">
           <img
             src="/PHOTO-2026-03-19-13-37-50.jpg"
             alt="Sandeep N — Brand Architect, TedX Speaker, City Partner NIA Guntur"
@@ -147,7 +147,7 @@ export default function SandeepN() {
             <p className="text-xs font-light tracking-[0.4em] uppercase text-[#f07723] mb-4">Ventures</p>
             <h2 className="font-montserrat text-4xl font-bold text-nia-black leading-tight">What he has built.</h2>
           </AnimatedSection>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-nia-border">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-px ">
             {ventures.map((venture) => (
               <AnimatedSection key={venture.name} className="bg-nia-ivory border border-nia-border rounded-xl p-10 hover:bg-nia-darker hover:border-[#f07723]/40 hover:shadow-editorial transition-all duration-300">
                 <h3 className="font-montserrat text-2xl font-bold text-[#0e1c40] mb-4">{venture.name}</h3>

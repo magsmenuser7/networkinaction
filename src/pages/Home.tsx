@@ -117,15 +117,15 @@ useEffect(() => {
             </motion.p>
 
             <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6, duration: 1 }}
-              className="font-montserrat text-5xl md:text-5xl lg:text-[55px] font-bold text-white mb-8 leading-tight max-w-5xl"
-            >
-              The Right Room
-              <br />
-              <span className="">Changes Everything.</span>
-            </motion.h1>
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: 0.6, duration: 1 }}
+  className="font-montserrat text-3xl sm:text-4xl md:text-5xl lg:text-[55px] font-bold text-white mb-6 lg:mb-8 leading-tight max-w-5xl"
+>
+  The Right Room
+  <br />
+  <span>Changes Everything.</span>
+</motion.h1>
 
             <motion.p
               initial={{ opacity: 0 }}
@@ -140,7 +140,7 @@ useEffect(() => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1.2, duration: 0.8 }}
-              className="text-sm font-light text-white/40 max-w-sm mb-14 tracking-wide"
+              className="text-sm font-light text-white/60 max-w-sm mb-14 tracking-wide"
             >
               Invite-only. Curated. Guntur's most serious business community.
             </motion.p>
@@ -197,7 +197,7 @@ useEffect(() => {
             {stats.map((stat) => (
               <div key={stat.label} className="px-8 py-6 text-center">
                 <div className="font-montserrat text-3xl md:text-4xl font-bold text-white mb-1">{stat.value}</div>
-                <p className="text-xs font-light text-[#555555] tracking-widest uppercase">{stat.label}</p>
+                <p className="text-xs font-light text-white tracking-widest uppercase">{stat.label}</p>
               </div>
             ))}
           </div>

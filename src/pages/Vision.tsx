@@ -51,7 +51,7 @@ export default function Vision() {
             <p className="text-xs font-light tracking-[0.5em] uppercase text-[#f07723] mb-6">
               NIA Guntur Vision
             </p>
-            <h1 className="font-montserrat text-5xl md:text-6xl lg:text-6xl font-bold text-white mb-6 leading-tight max-w-4xl">
+            <h1 className="font-montserrat text-3xl md:text-6xl lg:text-6xl font-bold text-white mb-6 leading-tight max-w-4xl">
               Building Guntur's
               <br />
               <span className="text-white">Business Future.</span>
@@ -123,7 +123,7 @@ export default function Vision() {
               is built on.
             </h2>
           </AnimatedSection>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-white">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px ">
             {pillars.map((pillar, index) => {
               const Icon = pillar.icon;
               return (
@@ -155,7 +155,7 @@ export default function Vision() {
               accelerate members.
             </h2>
           </AnimatedSection>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-nia-border">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-px ">
             {initiatives.map((item, index) => (
               <AnimatedSection
                 key={index}

@@ -51,7 +51,7 @@ export default function NIAGuntur() {
             <p className="text-xs font-light tracking-[0.4em] uppercase text-[#f07723] mb-6">
               About NIA Guntur
             </p>
-            <h1 className="font-montserrat text-5xl md:text-6xl lg:text-7xl font-bold text-nia-black mb-8 leading-tight">
+            <h1 className="font-montserrat text-3xl md:text-6xl lg:text-5xl font-bold text-nia-black mb-8 leading-tight">
               Not another business group.
               <br />
               <span className="text-black">A strategic growth ecosystem.</span>
@@ -71,7 +71,7 @@ export default function NIAGuntur() {
                 <p className="text-xs font-light tracking-[0.3em] uppercase text-[#f07723] mb-8">
                   Why NIA Guntur Exists
                 </p>
-                <h2 className="font-montserrat text-4xl md:text-5xl font-bold text-nia-black mb-8 leading-tight">
+                <h2 className="font-montserrat text-3xl md:text-5xl font-bold text-nia-black mb-8 leading-tight">
                   The ecosystem is
                   <br />
                   fragmented.

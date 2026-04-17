@@ -51,7 +51,7 @@ export default function Contact() {
         <div className="max-w-[1400px] mx-auto w-full relative z-10">
           <AnimatedSection>
             <p className="text-xs font-light tracking-[0.5em] uppercase text-[#f07723] mb-6">Get In Touch</p>
-            <h1 className="font-montserrat text-5xl md:text-6xl lg:text-6xl font-bold text-white mb-6 leading-tight max-w-3xl">
+            <h1 className="font-montserrat text-3xl md:text-6xl lg:text-6xl font-bold text-white mb-6 leading-tight max-w-3xl">
               Let's start a real
               <span className="text-white"> conversation.</span>
             </h1>
