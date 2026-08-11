@@ -3,7 +3,7 @@ import AnimatedSection from '../components/AnimatedSection';
 import { useSEO } from '../hooks/useSEO';
 // import { supabase } from '../lib/supabase';
 import { motion } from 'framer-motion';
-import members from "../../public/members2cropped.jpg"
+import members from "/members2cropped.jpg"
 
 export default function Apply() {
   useSEO({

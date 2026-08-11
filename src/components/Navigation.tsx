@@ -2,7 +2,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { useState, useEffect, useRef } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import logo from "../../public/nia-logo-guntur.png"
+import logo from "/nia-logo-guntur.png"
 
 const cityPartnerLinks = [
   { name: 'Sandeep N', path: '/city-partners/sandeep-n' },
@@ -69,13 +69,13 @@ export default function Navigation() {
           </Link>
           </div>
 
-          <div className="hidden lg:flex items-center gap-8">
+          {/* <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) =>
               link.children ? (
                 <div key={link.name} className="relative" ref={dropdownRef}>
                   <button
                     onClick={() => setDropdownOpen((prev) => !prev)}
-                    className={`flex items-center gap-1 text-xs font-light tracking-[0.2em] uppercase transition-colors duration-200 ${
+                    className={`flex items-center gap-1 text-xs  font-light tracking-[0.2em] uppercase transition-colors duration-200 ${
                       isActive(link.path) ? 'text-[#0e1c40]' : 'text-nia-black hover:text-nia-black/80'
                     }`}
                   >
@@ -104,7 +104,7 @@ export default function Navigation() {
                           <Link
                             key={child.path}
                             to={child.path}
-                            className={`block px-5 py-3.5 text-xs tracking-[0.2em] uppercase font-light transition-colors hover:bg-nia-darker ${
+                            className={`block px-5 py-3.5 text-xs  tracking-[0.2em] uppercase font-light transition-colors hover:bg-nia-darker ${
                               isActive(child.path) ? 'text-[#0e1c40]' : 'text-nia-black/60 hover:text-[#f07723]'
                             }`}
                           >
@@ -127,7 +127,78 @@ export default function Navigation() {
                 </Link>
               )
             )}
-          </div>
+          </div> */}
+
+
+          <div className="hidden lg:flex items-center gap-8">
+  {navLinks.map((link) =>
+    link.children ? (
+      <div key={link.name} className="relative" ref={dropdownRef}>
+        <button
+          onClick={() => setDropdownOpen((prev) => !prev)}
+          className={`flex items-center gap-1 text-xs font-light tracking-[0.2em] uppercase transition-colors duration-200 ${
+            isActive(link.path)
+              ? 'text-[#E87722]'
+              : 'text-[#E87722] hover:text-[#E87722]'
+          }`}
+        >
+          {link.name}
+          <ChevronDown
+            size={12}
+            className={`transition-transform duration-200 ${
+              dropdownOpen ? 'rotate-180' : ''
+            }`}
+          />
+        </button>
+
+        <AnimatePresence>
+          {dropdownOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: 6 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 6 }}
+              transition={{ duration: 0.15 }}
+              className="absolute top-full left-0 mt-3 w-52 bg-nia-ivory border border-nia-border rounded-xl shadow-editorial overflow-hidden"
+            >
+              <Link
+                to={link.path}
+                className="block px-5 py-3.5 text-xs tracking-[0.2em] uppercase font-light text-[#E87722] hover:bg-nia-darker hover:text-[#E87722] transition-colors border-b border-nia-border"
+              >
+                All Partners
+              </Link>
+
+              {link.children.map((child) => (
+                <Link
+                  key={child.path}
+                  to={child.path}
+                  className={`block px-5 py-3.5 text-xs tracking-[0.2em] uppercase font-light transition-colors hover:bg-nia-darker ${
+                    isActive(child.path)
+                      ? 'text-[#E87722]'
+                      : 'text-[#E87722] hover:text-[#E87722]'
+                  }`}
+                >
+                  {child.name}
+                </Link>
+              ))}
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+    ) : (
+      <Link
+        key={link.name}
+        to={link.path}
+        className={`text-xs font-light tracking-[0.2em] uppercase transition-colors duration-200 ${
+          isActive(link.path)
+            ? 'text-[#E87722]'
+            : 'text-[#E87722] hover:text-[#E87722]'
+        }`}
+      >
+        {link.name}
+      </Link>
+    )
+  )}
+</div>
 
           <div className="hidden lg:flex items-center gap-4">
             <Link

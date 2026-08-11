@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import AnimatedSection from '../components/AnimatedSection';
 import { useSEO } from '../hooks/useSEO';
-import group4 from "../../public/stagepeople2.jpeg"
+import group4 from "/stagepeople2.jpeg"
 
 const whatWeDo = [
   {

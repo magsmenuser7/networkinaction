@@ -4,8 +4,8 @@ import AnimatedSection from '../components/AnimatedSection';
 import { useSEO } from '../hooks/useSEO';
 // import { supabase } from '../lib/supabase';
 import { motion } from 'framer-motion';
-import team from "../../public/ganeshcropped.jpg"
-import building from "../../public/a56db7d4-1a61-4b46-9024-acd83239df9f.png"
+import team from "/ganeshcropped.jpg"
+import building from "/a56db7d4-1a61-4b46-9024-acd83239df9f.png"
 
 export default function Contact() {
   useSEO({

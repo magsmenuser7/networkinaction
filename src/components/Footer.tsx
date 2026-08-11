@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { MapPin, Phone, Mail, Instagram, Linkedin } from 'lucide-react';
-import logo from "../../public/nia-logo-guntur.png"
+import logo from "/nia-logo-guntur.png"
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();

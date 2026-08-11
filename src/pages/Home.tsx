@@ -3,16 +3,16 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Star, CheckCircle, Users, Globe, TrendingUp, Library, Share2, GraduationCap } from 'lucide-react';
 import AnimatedSection from '../components/AnimatedSection';
 import { useSEO } from '../hooks/useSEO';
-import logo from "../../public/nia-logo-guntur.png"
-import sandeep from "../../public/sandeep2.jpeg"
-import group from "../../public/members2.jpeg"
-import group2 from "../../public/threeheads1.jpeg"
-import group3 from "../../public/members1.jpeg"
+import logo from "/nia-logo-guntur.png"
+import sandeep from "/sandeep2.jpeg"
+import group from "/members2.jpeg"
+import group2 from "/threeheads1.jpeg"
+import group3 from "/members1.jpeg"
 import { useState, useEffect } from "react";
 
-import vinod from "../../public/vinod.jpeg"
-import teampic from "../../public/1775282604835.jpg"
-import team from "../../public/ganeshteam.jpeg"
+import vinod from "/vinod.jpeg"
+import teampic from "/1775282604835.jpg"
+import team from "/ganeshteam.jpeg"
 
 
 

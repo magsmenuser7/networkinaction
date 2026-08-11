@@ -2,8 +2,8 @@ import { Link } from 'react-router-dom';
 import { Target, Globe, Users, Lightbulb, Award, TrendingUp, ArrowRight } from 'lucide-react';
 import AnimatedSection from '../components/AnimatedSection';
 import { useSEO } from '../hooks/useSEO';
-import group4 from "../../public/sandeep.jpeg"
-import group5 from "../../public/stagepeople2.jpeg"
+import group4 from "/sandeep.jpeg"
+import group5 from "/stagepeople2.jpeg"
 
 const pillars = [
   { icon: Target, title: 'Purposeful Community', desc: 'Every member is handpicked. Every meeting is structured. No noise. Only signal.' },
