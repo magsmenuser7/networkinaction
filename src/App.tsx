@@ -12,6 +12,7 @@ import VinodT from './pages/VinodT';
 import Contact from './pages/Contact';
 import Apply from './pages/Apply';
 import Members from './pages/Members';
+import ThinkSpace from './pages/ThinkSpace';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import ScrollToTop from './components/ScrollToTop';
 
@@ -34,6 +35,7 @@ function AnimatedRoutes() {
         <Route path="/contact" element={<PT><Contact /></PT>} />
         <Route path="/apply" element={<PT><Apply /></PT>} />
         <Route path="/members" element={<PT><Members /></PT>} />
+        <Route path="/think-space" element={<PT><ThinkSpace /></PT>} />
         <Route path="/privacy-policy" element={<PT><PrivacyPolicy /></PT>} />
       </Routes>
     </AnimatePresence>

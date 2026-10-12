@@ -38,135 +38,123 @@ export default function VinodT() {
   });
 
   return (
-    <div className="min-h-screen bg-nia-ivory">
-      <section className="pt-16 min-h-screen grid grid-cols-1 lg:grid-cols-2">
-        <div className="flex flex-col justify-end pb-20 pt-16 px-8 lg:px-16 bg-nia-ivory order-1">
-          <div className="flex items-center gap-3 mb-10">
-            <Link to="/city-partners" className="text-xs tracking-[0.3em] uppercase text-nia-muted hover:text-nia-black transition-colors">
-              City Partners
-            </Link>
-            <span className="text-nia-border">/</span>
-            <span className="text-xs tracking-[0.3em] uppercase text-[#f07723]">Vinod Reddy T</span>
+    <div className="min-h-screen bg-nia-ivory text-nia-black">
+      <section className="nia-hero">
+        <div className="nia-shell relative grid items-center gap-10 pt-36 pb-16 md:pt-40 md:pb-20 lg:grid-cols-[1.1fr_.9fr]">
+          <div>
+            <nav aria-label="Breadcrumb" className="flex items-center gap-3 mb-8 text-sm">
+              <Link to="/city-partners" className="font-light text-white/70 hover:text-white transition-colors">
+                City Partners
+              </Link>
+              <span className="text-white/40">/</span>
+              <span className="font-semibold text-nia-peach">Vinod Reddy T</span>
+            </nav>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9 }}
+            >
+              <p className="nia-eyebrow-light mb-5">City Partner — NIA Guntur</p>
+              <h1 className="text-5xl md:text-7xl font-bold tracking-[-0.05em] leading-[1.02] mb-5">
+                Vinod Reddy T<span className="text-nia-orange">.</span>
+              </h1>
+              <p className="text-lg md:text-xl font-light text-white/90 mb-6">
+                Builder &nbsp;|&nbsp; Serial Entrepreneur
+              </p>
+              <p className="max-w-md font-light leading-relaxed text-white/80">
+                From IBM to Raaga Infra. From real estate to innovation. A forward-thinking entrepreneur who blends disciplined execution with a restless appetite for building new categories.
+              </p>
+            </motion.div>
           </div>
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9 }}
-          >
-            <p className="text-xs font-light tracking-[0.5em] uppercase text-[#f07723] mb-5">
-              City Partner — NIA Guntur
-            </p>
-            <h1 className="font-montserrat text-5xl md:text-6xl lg:text-7xl font-bold text-nia-black leading-tight mb-5">
-              Vinod Reddy T.
-            </h1>
-            <p className="text-sm font-light text-nia-muted tracking-widest uppercase mb-8">
-              Builder &nbsp;|&nbsp; Serial Entrepreneur
-            </p>
-            <p className="text-base font-light text-nia-gray leading-relaxed-custom max-w-md">
-              From IBM to Raaga Infra. From real estate to innovation. A forward-thinking entrepreneur who blends disciplined execution with a restless appetite for building new categories.
-            </p>
-          </motion.div>
-        </div>
 
-        <div className="relative h-[55vh] lg:h-[95vh] overflow-hidden order-2">
-          <img
-            src="/23456.png"
-            alt="Vinod Reddy T — Builder, Serial Entrepreneur, City Partner NIA Guntur"
-            className="w-full h-full object-cover object-top"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/30 lg:to-transparent" />
+          <div className="relative mx-auto w-full max-w-md lg:max-w-none">
+            <div className="absolute -inset-3 rounded-[1.75rem] border border-nia-orange/50" aria-hidden="true" />
+            <img
+              src="/23456.png"
+              alt="Vinod Reddy T — Builder, Serial Entrepreneur, City Partner NIA Guntur"
+              className="relative aspect-[4/5] w-full rounded-2xl object-cover object-top shadow-[0_24px_60px_#00000040]"
+            />
+          </div>
         </div>
       </section>
 
-      <section className="bg-nia-black border-b border-[#1a1a1a]">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-16">
-          <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-[#1e1e1e]">
+      <section className="bg-white border-b border-nia-border">
+        <div className="nia-shell">
+          <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-nia-border">
             {[
               { value: '35+', label: 'Projects Delivered' },
               { value: 'Jt. Sec.', label: 'CREDAI AP' },
               { value: '4+', label: 'Active Ventures' },
               { value: 'IBM', label: 'Alumni' },
             ].map((stat) => (
-              <div key={stat.label} className="px-8 py-8 text-center">
-                <div className="font-montserrat text-3xl font-bold text-white mb-1">{stat.value}</div>
-                <p className="text-xs font-light text-[#555555] tracking-widest uppercase">{stat.label}</p>
+              <div key={stat.label} className="px-4 py-8 text-center">
+                <div className="text-3xl font-bold tracking-[-0.04em] text-nia-navy mb-1">{stat.value}</div>
+                <p className="text-sm font-light text-nia-gray">{stat.label}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="py-32 px-6 lg:px-16">
-        <div className="max-w-[1400px] mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
-            <AnimatedSection>
-              <p className="text-xs font-light tracking-[0.4em] uppercase text-[#f07723] mb-6">The Story</p>
-              <h2 className="font-montserrat text-4xl md:text-5xl font-bold text-nia-black mb-10 leading-tight">
-                From IBM to infra.
-                <br />From execution to ecosystem.
-              </h2>
-            </AnimatedSection>
-            <AnimatedSection delay={0.15} className="space-y-6">
-              <p className="text-base font-light text-nia-gray leading-relaxed-custom">
-                Vinod Reddy Tiyyagura is a forward-thinking entrepreneur recognized for seamlessly blending innovation with disciplined execution. With a strong foundation in Information Technology and advanced academic exposure in Australia, he began his professional journey with IBM — gaining valuable global experience before transitioning into entrepreneurship.
-              </p>
-              <p className="text-base font-light text-nia-gray leading-relaxed-custom">
-                As the Founder of Raaga Infra, Vinod has successfully delivered over 35 residential and commercial projects, earning a reputation for quality, reliability, and timely execution. His ventures reflect a deep commitment to creating value-driven developments that resonate with modern urban lifestyles.
-              </p>
-              <p className="text-base font-light text-nia-gray leading-relaxed-custom">
-                Expanding beyond real estate, he has diversified into experiential and innovation-led businesses — including Snakes and Ladders, a popular indoor play zone in Guntur, and Wisecap Innovations. Vinod also serves as the Joint Secretary of CREDAI Andhra Pradesh, shaping the industry's future through governance and collaboration.
-              </p>
-            </AnimatedSection>
-          </div>
-        </div>
+      <section className="nia-shell grid gap-8 py-20 md:grid-cols-[.7fr_1.3fr] md:py-24">
+        <AnimatedSection>
+          <p className="nia-eyebrow mb-4">The story</p>
+          <h2 className="nia-title text-2xl md:text-3xl">
+            From IBM to infra.
+            <br />From execution to ecosystem.
+          </h2>
+        </AnimatedSection>
+        <AnimatedSection delay={0.15} className="space-y-6 border-l-2 border-nia-orange pl-6 md:pl-9">
+          <p className="font-light text-nia-gray leading-relaxed">
+            Vinod Reddy Tiyyagura is a forward-thinking entrepreneur recognized for seamlessly blending innovation with disciplined execution. With a strong foundation in Information Technology and advanced academic exposure in Australia, he began his professional journey with IBM — gaining valuable global experience before transitioning into entrepreneurship.
+          </p>
+          <p className="font-light text-nia-gray leading-relaxed">
+            As the Founder of Raaga Infra, Vinod has successfully delivered over 35 residential and commercial projects, earning a reputation for quality, reliability, and timely execution. His ventures reflect a deep commitment to creating value-driven developments that resonate with modern urban lifestyles.
+          </p>
+          <p className="font-light text-nia-gray leading-relaxed">
+            Expanding beyond real estate, he has diversified into experiential and innovation-led businesses — including Snakes and Ladders, a popular indoor play zone in Guntur, and Wisecap Innovations. Vinod also serves as the Joint Secretary of CREDAI Andhra Pradesh, shaping the industry's future through governance and collaboration.
+          </p>
+        </AnimatedSection>
       </section>
 
-      <section className="py-24 px-6 lg:px-16 bg-nia-darker border-y border-nia-border">
-        <div className="max-w-[1400px] mx-auto">
-          <AnimatedSection className="mb-14">
-            <p className="text-xs font-light tracking-[0.4em] uppercase text-[#f07723] mb-4">What Makes Him Different</p>
-            <h2 className="font-montserrat text-4xl font-bold text-nia-black leading-tight">The engine behind growth.</h2>
+      <section className="bg-white py-20 md:py-24">
+        <div className="nia-shell">
+          <AnimatedSection className="mb-10">
+            <p className="nia-eyebrow mb-3">What makes him different</p>
+            <h2 className="nia-title text-2xl md:text-3xl">The engine behind growth.</h2>
           </AnimatedSection>
-          <div className="space-y-0 border-t border-nia-border">
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {differentiators.map((item, index) => (
-              <AnimatedSection
-                key={index}
-                delay={index * 0.08}
-                className="flex flex-col md:flex-row md:items-start gap-6 py-8 border-b border-nia-border"
-              >
-                <div className="text-4xl font-extrabold text-nia-border leading-none w-12 shrink-0">
-                  {String(index + 1).padStart(2, '0')}
-                </div>
-                <div>
-                  <h3 className="text-base font-semibold text-nia-black mb-2 tracking-wide">{item.title}</h3>
-                  <p className="text-sm font-light text-nia-gray leading-relaxed-custom">{item.desc}</p>
-                </div>
+              <AnimatedSection key={index} delay={index * 0.08} className="border-t-2 border-nia-orange pt-5">
+                <span className="text-sm font-semibold text-nia-rust">{String(index + 1).padStart(2, '0')}</span>
+                <h3 className="mt-3 text-lg font-bold">{item.title}</h3>
+                <p className="mt-3 text-sm font-light leading-7 text-nia-gray">{item.desc}</p>
               </AnimatedSection>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="py-32 px-6 lg:px-16">
-        <div className="max-w-[1400px] mx-auto">
-          <AnimatedSection className="mb-14">
-            <p className="text-xs font-light tracking-[0.4em] uppercase text-[#f07723] mb-4">Ventures</p>
-            <h2 className="font-montserrat text-4xl font-bold text-nia-black leading-tight">What he has built.</h2>
+      <section className="py-20 md:py-24">
+        <div className="nia-shell">
+          <AnimatedSection className="mb-10">
+            <p className="nia-eyebrow mb-3">Ventures</p>
+            <h2 className="nia-title text-2xl md:text-3xl">What he has built.</h2>
           </AnimatedSection>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-px">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {ventures.map((venture, i) => (
-              <AnimatedSection key={venture.name} delay={i * 0.08} className="bg-nia-ivory border border-nia-border rounded-xl p-10 hover:bg-nia-darker hover:border-[#f07723]/40 hover:shadow-editorial transition-all duration-300">
-                <h3 className="font-montserrat text-2xl font-bold text-[#0e1c40] mb-4">{venture.name}</h3>
-                <p className="text-sm font-light text-nia-gray leading-relaxed-custom">{venture.desc}</p>
+              <AnimatedSection key={venture.name} delay={i * 0.08} className="nia-card p-8 md:p-10">
+                <h3 className="nia-title text-2xl text-nia-navy mb-4">{venture.name}</h3>
+                <p className="text-sm font-light text-nia-gray leading-7">{venture.desc}</p>
               </AnimatedSection>
             ))}
-            <AnimatedSection className="bg-nia-black p-10 md:col-span-2" delay={0.2}>
-              <p className="text-xs tracking-[0.4em] uppercase text-[#f07723] mb-4">His Role in NIA Guntur</p>
+            <AnimatedSection className="rounded-2xl bg-nia-navy p-8 md:p-10 text-white md:col-span-2" delay={0.2}>
+              <p className="nia-eyebrow-light mb-4">His role in NIA Guntur</p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <p className="text-base font-light text-white/70 leading-relaxed-custom">
+                <p className="font-light text-white/80 leading-relaxed">
                   Inside NIA Guntur, Vinod brings the infrastructure of growth — the systems, the accountability, and the relentless focus on outcomes. He ensures this room produces results, not just conversations.
                 </p>
-                <p className="font-montserrat text-xl text-white leading-relaxed italic">
+                <p className="text-xl font-light leading-relaxed text-white border-l-2 border-nia-orange pl-6">
                   "He's not a networker. He's a builder. And now, he's building the room."
                 </p>
               </div>
@@ -175,25 +163,18 @@ export default function VinodT() {
         </div>
       </section>
 
-      <section className="py-20 px-6 lg:px-16 bg-nia-black">
-        <div className="max-w-[1400px] mx-auto">
-          <AnimatedSection>
-            <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
-              <div>
-                <p className="text-xs tracking-[0.3em] uppercase text-[#555555] mb-3">Connect with Vinod</p>
-                <a href="tel:+919885050850" className="font-montserrat text-3xl font-bold text-white hover:text-[#f07723] transition-colors">
-                  +91 98850 50850
-                </a>
-              </div>
-              <Link
-                to="/apply"
-                className="h-[52px] px-10 font-semibold text-sm tracking-widest uppercase bg-nia-orange text-white hover:bg-nia-orange/90 hover:shadow-[0_0_32px_rgba(232,119,34,0.3)] transition-all duration-300 inline-flex items-center gap-2 shrink-0"
-              >
-                Apply for Membership <ArrowRight size={16} />
-              </Link>
-            </div>
-          </AnimatedSection>
-        </div>
+      <section className="bg-nia-navy py-20 text-white">
+        <AnimatedSection className="nia-shell flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
+          <div>
+            <p className="nia-eyebrow-light mb-3">Connect with Vinod</p>
+            <a href="tel:+919885050850" className="nia-title text-3xl md:text-4xl text-white hover:text-nia-orange transition-colors">
+              +91 98850 50850
+            </a>
+          </div>
+          <Link to="/apply" className="nia-btn self-start md:self-auto shrink-0">
+            Apply for Membership <ArrowRight size={16} />
+          </Link>
+        </AnimatedSection>
       </section>
     </div>
   );

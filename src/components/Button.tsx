@@ -21,16 +21,12 @@ export default function Button({
   className = '',
   disabled = false,
 }: ButtonProps) {
-  const baseClasses =
-    'h-[52px] px-8 font-semibold text-sm tracking-widest uppercase rounded-xl transition-all duration-300 inline-flex items-center justify-center disabled:opacity-40 disabled:cursor-not-allowed';
+  const baseClasses = 'nia-btn';
 
   const variantClasses = {
-    filled:
-      'bg-nia-orange text-nia-white hover:bg-nia-orange/90 hover:shadow-[0_0_24px_rgba(232,119,34,0.3)] border border-nia-orange',
-    ghost:
-      'bg-transparent text-nia-black/70 border border-nia-black/20 hover:border-[#f07723] hover:text-[#f07723]',
-    gold:
-      'bg-[#f07723] text-nia-black hover:bg-[#f07723]/90 hover:shadow-[0_0_24px_rgba(198,169,105,0.3)] border border-[#f07723]',
+    filled: '',
+    gold: '',
+    ghost: '!bg-transparent border border-nia-black/20 !text-nia-black hover:border-nia-orange hover:!text-nia-orange',
   };
 
   const classes = `${baseClasses} ${variantClasses[variant]} ${className}`;

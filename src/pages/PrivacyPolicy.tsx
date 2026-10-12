@@ -41,43 +41,41 @@ Email: guntur@networkinaction.com`,
 
 export default function PrivacyPolicy() {
   return (
-    <div className="min-h-screen bg-nia-ivory">
-      <section className="min-h-[40vh] flex flex-col justify-end px-6 lg:px-12 pb-16 pt-32 border-b border-nia-border">
-        <div className="max-w-[1280px] mx-auto w-full">
+    <div className="min-h-screen bg-white">
+      <section className="nia-hero pt-36 md:pt-40 pb-16">
+        <div className="nia-shell">
           <AnimatedSection>
-            <p className="text-xs font-light tracking-[0.4em] uppercase text-[#f07723] mb-6">
-              Legal
-            </p>
-            <h1 className="font-montserrat text-4xl md:text-5xl lg:text-6xl font-bold text-nia-black leading-tight">
+            <p className="nia-eyebrow-light mb-4">Legal</p>
+            <h1 className="text-4xl md:text-5xl font-bold tracking-[-0.04em] leading-tight text-white">
               Privacy Policy
             </h1>
-            <p className="text-sm font-light text-nia-muted mt-4">
+            <p className="text-sm font-light text-white/80 mt-4">
               Last updated: April 2026
             </p>
           </AnimatedSection>
         </div>
       </section>
 
-      <section className="py-20 px-6 lg:px-12">
-        <div className="max-w-[1280px] mx-auto">
+      <section className="bg-white py-20 md:py-24">
+        <div className="nia-shell">
           <div className="max-w-3xl">
             <AnimatedSection>
-              <p className="text-base font-light text-nia-gray leading-relaxed-custom mb-16">
+              <p className="text-base md:text-lg font-light text-nia-gray leading-relaxed mb-12">
                 Network In Action Guntur ("NIA Guntur", "we", "us") is committed to protecting your personal information. This Privacy Policy explains what data we collect through this website, how we use it, and your rights regarding your information.
               </p>
             </AnimatedSection>
 
-            <div className="space-y-0">
+            <div>
               {sections.map((section, index) => (
                 <AnimatedSection
                   key={index}
                   delay={index * 0.06}
-                  className="py-10 border-b border-nia-border"
+                  className="py-10 border-t border-nia-border"
                 >
-                  <h2 className="font-montserrat text-2xl font-bold text-nia-black mb-5">
+                  <h2 className="nia-title text-2xl md:text-3xl mb-5">
                     {section.title}
                   </h2>
-                  <div className="text-sm font-light text-nia-gray leading-relaxed-custom whitespace-pre-line">
+                  <div className="font-light text-nia-gray leading-relaxed whitespace-pre-line">
                     {section.content}
                   </div>
                 </AnimatedSection>

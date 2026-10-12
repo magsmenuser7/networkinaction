@@ -22,9 +22,28 @@
   }
 
   ::selection {
-    background-color: #C6A969;
+    background-color: #F4AD78;
     color: #0D0D0D;
   }
+}
+
+/* Theme primitives (from the Canva "First Group" design). Use these on every page. */
+@layer components {
+  .nia-shell { @apply max-w-[1200px] mx-auto px-6 lg:px-12; }
+  .nia-hero {
+    @apply relative overflow-hidden text-white;
+    background-image:
+      radial-gradient(circle at 83% 26%, #e8772238 0, transparent 25%),
+      repeating-linear-gradient(130deg, transparent 0 54px, #ffffff0b 55px 56px),
+      linear-gradient(110deg, #0E1C40 0%, #152955 65%, #24375c 100%);
+  }
+  .nia-eyebrow { @apply text-xs font-semibold uppercase tracking-[0.18em] text-nia-rust; }
+  .nia-eyebrow-light { @apply text-xs font-semibold uppercase tracking-[0.18em] text-nia-peach; }
+  .nia-title { @apply font-bold tracking-[-0.04em] leading-tight; }
+  .nia-btn { @apply inline-flex items-center justify-center gap-2 rounded-full bg-nia-orange px-7 py-4 font-semibold text-nia-black transition hover:brightness-110 disabled:opacity-40 disabled:cursor-not-allowed; }
+  .nia-btn-outline { @apply inline-flex items-center justify-center gap-2 rounded-full border border-current px-7 py-4 font-semibold transition hover:text-nia-orange; }
+  .nia-card { @apply rounded-2xl border border-nia-border bg-white p-6 transition duration-200 hover:-translate-y-[3px] hover:border-[#e8ad80] hover:shadow-[0_16px_38px_#0d0d0d0b]; }
+  .nia-input { @apply w-full rounded-xl border border-[#CBC6BF] bg-white px-4 py-3 font-light text-nia-black focus:outline-none focus:border-nia-orange; }
 }
 
 @layer utilities {

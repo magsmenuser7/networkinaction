@@ -2,7 +2,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { useState, useEffect, useRef } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import logo from "/nia-logo-guntur.png"
+import logo from "/nia-logo-guntur-trim.png"
 
 const cityPartnerLinks = [
   { name: 'Sandeep N', path: '/city-partners/sandeep-n' },
@@ -15,6 +15,7 @@ const navLinks = [
   { name: 'City Partners', path: '/city-partners', children: cityPartnerLinks },
   { name: 'Contact', path: '/contact' },
   { name: 'Members', path: '/members' },
+  { name: 'Think Space', path: '/think-space' },
 ];
 
 export default function Navigation() {
@@ -53,8 +54,8 @@ export default function Navigation() {
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           isScrolled
-            ? 'bg-nia-ivory/96 backdrop-blur-md border-b border-nia-border shadow-whisper'
-            : 'bg-nia-ivory/96 backdrop-blur-md border-b border-nia-border'
+            ? 'bg-nia-ivory/95 backdrop-blur-md border-b border-nia-border shadow-whisper'
+            : 'bg-nia-ivory/95 backdrop-blur-md border-b border-nia-border'
             // ? 'bg-transparent backdrop-blur-2xl border-b border-nia-border shadow-whisper'
             // : 'bg-white'
         }`}
@@ -64,82 +65,24 @@ export default function Navigation() {
           <div className="z-199">
           
           <Link to="/" className="flex items-center gap-3 z-100 shrink-0">
-            <img src={logo} alt="NIA Guntur" className="h-8 w-auto" />
+            <img src={logo} alt="NIA Guntur" className="h-9 lg:h-10 w-auto" />
             
           </Link>
           </div>
 
-          {/* <div className="hidden lg:flex items-center gap-8">
-            {navLinks.map((link) =>
-              link.children ? (
-                <div key={link.name} className="relative" ref={dropdownRef}>
-                  <button
-                    onClick={() => setDropdownOpen((prev) => !prev)}
-                    className={`flex items-center gap-1 text-xs  font-light tracking-[0.2em] uppercase transition-colors duration-200 ${
-                      isActive(link.path) ? 'text-[#0e1c40]' : 'text-nia-black hover:text-nia-black/80'
-                    }`}
-                  >
-                    {link.name}
-                    <ChevronDown
-                      size={12}
-                      className={`transition-transform duration-200 ${dropdownOpen ? 'rotate-180' : ''}`}
-                    />
-                  </button>
-                  <AnimatePresence>
-                    {dropdownOpen && (
-                      <motion.div
-                        initial={{ opacity: 0, y: 6 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: 6 }}
-                        transition={{ duration: 0.15 }}
-                        className="absolute top-full left-0 mt-3 w-52 bg-nia-ivory border border-nia-border rounded-xl shadow-editorial overflow-hidden"
-                      >
-                        <Link
-                          to={link.path}
-                          className="block px-5 py-3.5 text-xs tracking-[0.2em] uppercase font-light text-nia-black/60 hover:bg-nia-darker hover:text-[#0e1c40] transition-colors border-b border-nia-border"
-                        >
-                          All Partners
-                        </Link>
-                        {link.children.map((child) => (
-                          <Link
-                            key={child.path}
-                            to={child.path}
-                            className={`block px-5 py-3.5 text-xs  tracking-[0.2em] uppercase font-light transition-colors hover:bg-nia-darker ${
-                              isActive(child.path) ? 'text-[#0e1c40]' : 'text-nia-black/60 hover:text-[#f07723]'
-                            }`}
-                          >
-                            {child.name}
-                          </Link>
-                        ))}
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
-              ) : (
-                <Link
-                  key={link.name}
-                  to={link.path}
-                  className={`text-xs font-light tracking-[0.2em] uppercase transition-colors duration-200 ${
-                    isActive(link.path) ? 'text-[#0e1c40]' : 'text-nia-black hover:text-nia-black'
-                  }`}
-                >
-                  {link.name}
-                </Link>
-              )
-            )}
-          </div> */}
 
 
-          <div className="hidden lg:flex items-center gap-8">
+
+          <div className="hidden lg:flex items-center gap-7">
   {navLinks.map((link) =>
     link.children ? (
       <div key={link.name} className="relative" ref={dropdownRef}>
         <button
           onClick={() => setDropdownOpen((prev) => !prev)}
-          className={`flex items-center gap-1 text-xs font-light tracking-[0.2em] uppercase transition-colors duration-200 ${
+          className={`flex items-center gap-1 text-[15px] font-light transition-colors duration-200 ${
             isActive(link.path)
-              ? 'text-[#E87722]'
-              : 'text-[#E87722] hover:text-[#E87722]'
+              ? 'text-nia-orange font-medium'
+              : 'text-nia-black hover:text-nia-orange'
           }`}
         >
           {link.name}
@@ -162,7 +105,7 @@ export default function Navigation() {
             >
               <Link
                 to={link.path}
-                className="block px-5 py-3.5 text-xs tracking-[0.2em] uppercase font-light text-[#E87722] hover:bg-nia-darker hover:text-[#E87722] transition-colors border-b border-nia-border"
+                className="block px-5 py-3.5 text-sm font-light text-nia-black hover:bg-nia-darker hover:text-nia-orange transition-colors border-b border-nia-border"
               >
                 All Partners
               </Link>
@@ -171,10 +114,10 @@ export default function Navigation() {
                 <Link
                   key={child.path}
                   to={child.path}
-                  className={`block px-5 py-3.5 text-xs tracking-[0.2em] uppercase font-light transition-colors hover:bg-nia-darker ${
+                  className={`block px-5 py-3.5 text-sm font-light transition-colors hover:bg-nia-darker ${
                     isActive(child.path)
-                      ? 'text-[#E87722]'
-                      : 'text-[#E87722] hover:text-[#E87722]'
+                      ? 'text-nia-orange'
+                      : 'text-nia-black hover:text-nia-orange'
                   }`}
                 >
                   {child.name}
@@ -188,10 +131,10 @@ export default function Navigation() {
       <Link
         key={link.name}
         to={link.path}
-        className={`text-xs font-light tracking-[0.2em] uppercase transition-colors duration-200 ${
+        className={`text-[15px] font-light transition-colors duration-200 ${
           isActive(link.path)
-            ? 'text-[#E87722]'
-            : 'text-[#E87722] hover:text-[#E87722]'
+            ? 'text-nia-orange font-medium'
+            : 'text-nia-black hover:text-nia-orange'
         }`}
       >
         {link.name}
@@ -203,9 +146,9 @@ export default function Navigation() {
           <div className="hidden lg:flex items-center gap-4">
             <Link
               to="/apply"
-              className="h-9 px-6 text-xs font-semibold tracking-[0.2em] uppercase bg-nia-orange text-white rounded-lg hover:bg-nia-orange/90 hover:shadow-[0_0_20px_rgba(232,119,34,0.3)] transition-all duration-300 inline-flex items-center"
+              className="nia-btn !px-5 !py-2.5 text-sm"
             >
-              Apply
+              Apply for Membership
             </Link>
           </div>
 
@@ -233,8 +176,8 @@ export default function Navigation() {
                 <div key={link.name}>
                   <Link
                     to={link.path}
-                    className={`block py-4 text-sm font-light tracking-[0.2em] uppercase border-b border-nia-border transition-colors ${
-                      isActive(link.path) ? 'text-[#0e1c40]' : 'text-nia-black'
+                    className={`block py-4 text-base font-light border-b border-nia-border transition-colors ${
+                      isActive(link.path) ? 'text-nia-orange' : 'text-nia-black'
                     }`}
                   >
                     {link.name}
@@ -243,8 +186,8 @@ export default function Navigation() {
                     <Link
                       key={child.path}
                       to={child.path}
-                      className={`block py-3 pl-5 text-xs font-light tracking-widest uppercase border-b border-nia-border transition-colors ${
-                        isActive(child.path) ? 'text-[#0e1c40]' : 'text-nia-black/60 hover:text-[#f07723]'
+                      className={`block py-3 pl-5 text-sm font-light border-b border-nia-border transition-colors ${
+                        isActive(child.path) ? 'text-nia-orange' : 'text-nia-black/60 hover:text-nia-orange'
                       }`}
                     >
                       {child.name}
@@ -256,7 +199,7 @@ export default function Navigation() {
             <div className="px-6 pb-10">
               <Link
                 to="/apply"
-                className="w-full h-14 text-sm font-semibold tracking-widest uppercase bg-nia-orange text-white rounded-xl flex items-center justify-center hover:bg-nia-orange/90 transition-colors"
+                className="nia-btn w-full"
               >
                 Apply for Membership
               </Link>

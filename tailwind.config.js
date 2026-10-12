@@ -16,6 +16,9 @@ export default {
         'nia-white': '#FFFFFF',
         'nia-border': '#E5E1DB',
         'nia-border-light': '#E0E0E0',
+        'nia-navy': '#0E1C40',
+        'nia-rust': '#A84B07',
+        'nia-peach': '#F4AD78',
       },
       fontFamily: {
         'poppins': ['Poppins', 'sans-serif'],
