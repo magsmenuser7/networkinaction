@@ -72,7 +72,7 @@ const members: Member[] = [
     bio: 'Tara Chand has shaped TM Constructions around that principle, delivering residential, commercial and institutional projects while maintaining in-house control across civil works, labour contracting and complete project execution. With an established presence across the region, the company is now extending its capabilities into infrastructure and industrial projects. His approach is grounded in building lasting relationships with developers, architects, contractors and execution teams, recognising that every successful project is ultimately a reflection of the people and partnerships behind it.',
   },
   {
-    name: 'Jammali Rama',
+    name: 'Jamili Rama',
     role: 'Director · Scheller Enterprises Pvt Ltd',
     sectors: ['Construction Chemicals'],
     bio: 'As a unit of Land Marshal, Land Marshal Chemicals has built its presence in South India’s chemical industry through high-performance construction chemicals and customised formulations designed around specific project requirements. Its focus extends beyond supplying products to understanding the challenges faced by builders, engineers and architects and developing solutions that respond to them. With a strong emphasis on relationships and collaboration, the business continues to build connections across the construction ecosystem, bringing technical capability and industry understanding together to support better project outcomes.',
