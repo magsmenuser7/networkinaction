@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { MapPin, Phone, Mail, Instagram, Linkedin } from 'lucide-react';
+import { MapPin, Phone, Mail, Instagram, Youtube, Facebook } from 'lucide-react';
 import logo from "/nia-logo-guntur-trim.png"
 
 export default function Footer() {
@@ -23,7 +23,7 @@ export default function Footer() {
             </p>
             <div className="flex items-center gap-4">
               <a
-                href="https://www.instagram.com/niaaguntur"
+                href="https://www.instagram.com/networkinactionguntur/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 border border-white/20 rounded-full flex items-center justify-center text-white/70 hover:text-nia-peach hover:border-nia-peach/60 transition-all duration-200"
@@ -32,13 +32,22 @@ export default function Footer() {
                 <Instagram size={14} />
               </a>
               <a
-                href="https://www.linkedin.com/company/niaaguntur"
+                href="https://www.youtube.com/@networkinactionguntur"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 border border-white/20 rounded-full flex items-center justify-center text-white/70 hover:text-nia-peach hover:border-nia-peach/60 transition-all duration-200"
-                aria-label="LinkedIn"
+                aria-label="YouTube"
               >
-                <Linkedin size={14} />
+                <Youtube size={14} />
+              </a>
+              <a
+                href="https://www.facebook.com/profile.php?id=61577547012330"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 border border-white/20 rounded-full flex items-center justify-center text-white/70 hover:text-nia-peach hover:border-nia-peach/60 transition-all duration-200"
+                aria-label="Facebook"
+              >
+                <Facebook size={14} />
               </a>
             </div>
           </div>
