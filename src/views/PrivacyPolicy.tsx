@@ -44,7 +44,7 @@ Email: guntur@networkinaction.com`,
 export default function PrivacyPolicy() {
   return (
     <div className="min-h-screen bg-white">
-      <section className="nia-hero pt-36 md:pt-40 pb-16">
+      <section className="nia-hero !min-h-[55svh] pt-36 md:pt-40 pb-16" style={{ ['--hero-img' as string]: "url('/members1.jpeg')" }}>
         <div className="nia-shell">
           <AnimatedSection>
             <p className="nia-eyebrow-light mb-4">Legal</p>

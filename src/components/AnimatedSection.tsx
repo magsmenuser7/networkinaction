@@ -1,8 +1,6 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
-import { useRef } from 'react';
 
 interface AnimatedSectionProps {
   children: React.ReactNode;
@@ -10,20 +8,14 @@ interface AnimatedSectionProps {
   delay?: number;
 }
 
-export default function AnimatedSection({
-  children,
-  className = '',
-  delay = 0,
-}: AnimatedSectionProps) {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
-
+// Rise + un-blur into place the first time it scrolls into view.
+export default function AnimatedSection({ children, className = '', delay = 0 }: AnimatedSectionProps) {
   return (
     <motion.div
-      ref={ref}
-      initial={{ opacity: 0, y: 24 }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
-      transition={{ duration: 0.6, delay }}
+      initial={{ opacity: 0, y: 32, filter: 'blur(8px)' }}
+      whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+      viewport={{ once: true, margin: '-80px' }}
+      transition={{ duration: 0.8, delay, ease: [0.22, 1, 0.36, 1] }}
       className={className}
     >
       {children}

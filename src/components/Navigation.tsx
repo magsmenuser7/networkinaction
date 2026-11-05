@@ -3,8 +3,8 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState, useEffect, useRef } from 'react';
-import { Menu, X, ChevronDown } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { Menu, X, ChevronDown, Instagram, Youtube, Facebook, ArrowUpRight } from 'lucide-react';
+import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'framer-motion';
 const logo = '/nia-logo-guntur-trim.png';
 
 const cityPartnerLinks = [
@@ -13,26 +13,38 @@ const cityPartnerLinks = [
 ];
 
 const navLinks = [
-  { name: 'About NIA', path: '/about-nia' },
-  { name: 'NIA Guntur Vision', path: '/vision' },
+  { name: 'About', path: '/about-nia' },
+  { name: 'Vision', path: '/vision' },
   { name: 'City Partners', path: '/city-partners', children: cityPartnerLinks },
-  { name: 'Contact', path: '/contact' },
   { name: 'Members', path: '/members' },
   { name: 'Think Space', path: '/think-space' },
+  { name: 'Contact', path: '/contact' },
 ];
+
+const socials = [
+  { label: 'Instagram', href: 'https://www.instagram.com/networkinactionguntur/', Icon: Instagram },
+  { label: 'YouTube', href: 'https://www.youtube.com/@networkinactionguntur', Icon: Youtube },
+  { label: 'Facebook', href: 'https://www.facebook.com/profile.php?id=61577547012330', Icon: Facebook },
+];
+
+const spring = { type: 'spring' as const, stiffness: 420, damping: 34 };
 
 export default function Navigation() {
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
+  const [hidden, setHidden] = useState(false);
+  const [hovered, setHovered] = useState<string | null>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 40);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  // Solid after 40px; tuck away while scrolling down, return on any scroll up.
+  const { scrollY } = useScroll();
+  useMotionValueEvent(scrollY, 'change', (y) => {
+    const prev = scrollY.getPrevious() ?? 0;
+    setIsScrolled(y > 40);
+    setHidden(y > 240 && y > prev && !dropdownOpen);
+  });
 
   useEffect(() => {
     setIsMobileMenuOpen(false);
@@ -41,170 +53,213 @@ export default function Navigation() {
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
-        setDropdownOpen(false);
-      }
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) setDropdownOpen(false);
     };
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  const isActive = (path: string) =>
-    pathname === path || pathname.startsWith(path + '/');
+  const isActive = (path: string) => pathname === path || pathname.startsWith(path + '/');
+  const activePath = navLinks.find((l) => isActive(l.path))?.path ?? null;
+  const pillAt = hovered ?? activePath; // the sliding pill follows the cursor, rests on the current page
 
-  return (
+  const solid = isScrolled || isMobileMenuOpen;
+  const ink = solid ? 'text-nia-black' : 'text-white';
+
+  const linkInner = (link: (typeof navLinks)[number]) => (
     <>
-      <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          isScrolled
-            ? 'bg-nia-ivory/95 backdrop-blur-md border-b border-nia-border shadow-whisper'
-            : 'bg-nia-ivory/95 backdrop-blur-md border-b border-nia-border'
-            // ? 'bg-transparent backdrop-blur-2xl border-b border-nia-border shadow-whisper'
-            // : 'bg-white'
-        }`}
-      >
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-10 flex items-center justify-between h-16 lg:h-[70px] text-black">
-
-          <div className="z-199">
-          
-          <Link href="/" className="flex items-center gap-3 z-100 shrink-0">
-            <img src={logo} alt="NIA Guntur" className="h-9 lg:h-10 w-auto" />
-            
-          </Link>
-          </div>
-
-
-
-
-          <div className="hidden lg:flex items-center gap-7">
-  {navLinks.map((link) =>
-    link.children ? (
-      <div key={link.name} className="relative" ref={dropdownRef}>
-        <button
-          onClick={() => setDropdownOpen((prev) => !prev)}
-          className={`flex items-center gap-1 text-[15px] font-light transition-colors duration-200 ${
-            isActive(link.path)
-              ? 'text-nia-orange font-medium'
-              : 'text-nia-black hover:text-nia-orange'
+      {pillAt === link.path && (
+        <motion.span
+          layoutId="nav-pill"
+          transition={spring}
+          className={`absolute inset-0 -z-10 rounded-full ${
+            activePath === link.path ? (solid ? 'bg-nia-black' : 'bg-white') : solid ? 'bg-nia-black/[0.07]' : 'bg-white/15'
           }`}
-        >
-          {link.name}
-          <ChevronDown
-            size={12}
-            className={`transition-transform duration-200 ${
-              dropdownOpen ? 'rotate-180' : ''
-            }`}
-          />
-        </button>
-
-        <AnimatePresence>
-          {dropdownOpen && (
-            <motion.div
-              initial={{ opacity: 0, y: 6 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 6 }}
-              transition={{ duration: 0.15 }}
-              className="absolute top-full left-0 mt-3 w-52 bg-nia-ivory border border-nia-border rounded-xl shadow-editorial overflow-hidden"
-            >
-              <Link
-                href={link.path}
-                className="block px-5 py-3.5 text-sm font-light text-nia-black hover:bg-nia-darker hover:text-nia-orange transition-colors border-b border-nia-border"
-              >
-                All Partners
-              </Link>
-
-              {link.children.map((child) => (
-                <Link
-                  key={child.path}
-                  href={child.path}
-                  className={`block px-5 py-3.5 text-sm font-light transition-colors hover:bg-nia-darker ${
-                    isActive(child.path)
-                      ? 'text-nia-orange'
-                      : 'text-nia-black hover:text-nia-orange'
-                  }`}
-                >
-                  {child.name}
-                </Link>
-              ))}
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
-    ) : (
-      <Link
-        key={link.name}
-        href={link.path}
-        className={`text-[15px] font-light transition-colors duration-200 ${
-          isActive(link.path)
-            ? 'text-nia-orange font-medium'
-            : 'text-nia-black hover:text-nia-orange'
+        />
+      )}
+      <span
+        className={`transition-colors duration-200 ${
+          activePath === link.path && pillAt === link.path ? (solid ? 'text-white' : 'text-nia-black') : ''
         }`}
       >
         {link.name}
-      </Link>
-    )
-  )}
-</div>
+      </span>
+      {activePath === link.path && pillAt !== link.path && (
+        <span className="absolute bottom-1 left-1/2 h-1 w-1 -translate-x-1/2 rounded-full bg-nia-orange" />
+      )}
+    </>
+  );
 
-          <div className="hidden lg:flex items-center gap-4">
+  const linkClass = 'relative isolate inline-flex items-center gap-1 rounded-full px-4 py-2 text-[13px] font-medium';
+
+  return (
+    <>
+      <motion.header
+        initial={{ y: -24, opacity: 0 }}
+        animate={{ y: hidden && !isMobileMenuOpen ? -110 : 0, opacity: 1 }}
+        transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+        className="fixed inset-x-0 top-0 z-50 px-3 pt-3 lg:px-6 lg:pt-4"
+      >
+        <nav
+          className={`mx-auto flex max-w-[1280px] items-center justify-between rounded-full border pl-5 pr-2 backdrop-blur-xl transition-all duration-500 ${
+            solid
+              ? 'h-14 border-nia-black/[0.06] bg-white/80 shadow-[0_10px_40px_rgba(20,18,14,0.10)]'
+              : 'h-16 border-white/15 bg-white/[0.07] shadow-[inset_0_1px_0_rgba(255,255,255,0.12)]'
+          }`}
+        >
+          <Link href="/" className="flex shrink-0 items-center" aria-label="NIA Guntur home">
+            <img
+              src={logo}
+              alt="NIA Guntur"
+              className={`w-auto transition-all duration-500 ${solid ? 'h-7' : 'h-8 brightness-0 invert'}`}
+            />
+          </Link>
+
+          <div className={`hidden items-center lg:flex ${ink}`} onMouseLeave={() => setHovered(null)}>
+            {navLinks.map((link) =>
+              link.children ? (
+                <div key={link.name} className="relative" ref={dropdownRef}>
+                  <button
+                    onClick={() => setDropdownOpen((prev) => !prev)}
+                    onMouseEnter={() => setHovered(link.path)}
+                    className={linkClass}
+                    aria-expanded={dropdownOpen}
+                  >
+                    {linkInner(link)}
+                    <ChevronDown size={12} className={`transition-transform duration-300 ${dropdownOpen ? 'rotate-180' : ''}`} />
+                  </button>
+
+                  <AnimatePresence>
+                    {dropdownOpen && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 10, scale: 0.96 }}
+                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                        exit={{ opacity: 0, y: 10, scale: 0.96 }}
+                        transition={{ duration: 0.18 }}
+                        className="absolute left-1/2 top-full mt-4 w-60 origin-top -translate-x-1/2 rounded-3xl border border-nia-black/[0.06] bg-white/95 p-2 text-nia-black shadow-[0_24px_60px_rgba(0,0,0,0.16)] backdrop-blur-xl"
+                      >
+                        {[{ name: 'All City Partners', path: link.path }, ...link.children].map((child, i) => (
+                          <motion.div
+                            key={child.name}
+                            initial={{ opacity: 0, x: -6 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: 0.04 * i }}
+                          >
+                            <Link
+                              href={child.path}
+                              className={`group flex items-center justify-between rounded-2xl px-4 py-3 text-sm transition-colors hover:bg-nia-ivory ${
+                                pathname === child.path ? 'text-nia-orange' : ''
+                              }`}
+                            >
+                              {child.name}
+                              <ArrowUpRight size={14} className="-translate-x-1 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
+                            </Link>
+                          </motion.div>
+                        ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              ) : (
+                <Link key={link.name} href={link.path} onMouseEnter={() => setHovered(link.path)} className={linkClass}>
+                  {linkInner(link)}
+                </Link>
+              )
+            )}
+          </div>
+
+          <div className="hidden items-center gap-1 lg:flex">
+            {socials.map(({ label, href, Icon }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={label}
+                className={`grid h-9 w-9 place-items-center rounded-full transition-all duration-300 hover:-translate-y-0.5 hover:bg-nia-orange hover:text-white ${
+                  solid ? 'text-nia-black/60' : 'text-white/75'
+                }`}
+              >
+                <Icon size={15} />
+              </a>
+            ))}
             <Link
               href="/apply"
-              className="nia-btn !px-5 !py-2.5 text-sm"
+              className="group ml-2 flex items-center gap-3 rounded-full bg-nia-orange py-1.5 pl-5 pr-1.5 text-[13px] font-medium text-white transition-all duration-300 hover:shadow-[0_10px_28px_rgba(232,119,34,0.45)] active:scale-[0.97]"
             >
-              Apply for Membership
+              Apply now
+              <span className="grid h-8 w-8 place-items-center rounded-full bg-white text-nia-orange transition-transform duration-300 group-hover:rotate-45">
+                <ArrowUpRight size={15} />
+              </span>
             </Link>
           </div>
 
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden p-2 text-nia-black"
+            className={`grid h-10 w-10 place-items-center rounded-full lg:hidden ${solid ? 'bg-nia-black text-white' : 'bg-white text-nia-black'}`}
             aria-label="Toggle menu"
+            aria-expanded={isMobileMenuOpen}
           >
-            {isMobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
+            {isMobileMenuOpen ? <X size={18} /> : <Menu size={18} />}
           </button>
-        </div>
-      </nav>
+        </nav>
+      </motion.header>
 
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -8 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -8 }}
-            transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-40 bg-nia-ivory pt-16 flex flex-col overflow-y-auto"
+            initial={{ opacity: 0, clipPath: 'circle(0% at 95% 4%)' }}
+            animate={{ opacity: 1, clipPath: 'circle(150% at 95% 4%)' }}
+            exit={{ opacity: 0, clipPath: 'circle(0% at 95% 4%)' }}
+            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+            className="fixed inset-0 z-40 flex flex-col overflow-y-auto bg-nia-ivory pt-24"
           >
-            <div className="flex-1 px-6 py-10 space-y-1">
-              {navLinks.map((link) => (
-                <div key={link.name}>
+            <div className="flex-1 px-6">
+              {navLinks.map((link, i) => (
+                <motion.div
+                  key={link.name}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.15 + i * 0.05 }}
+                >
                   <Link
                     href={link.path}
-                    className={`block py-4 text-base font-light border-b border-nia-border transition-colors ${
+                    className={`flex items-baseline justify-between border-b border-nia-border py-4 font-serif text-3xl uppercase ${
                       isActive(link.path) ? 'text-nia-orange' : 'text-nia-black'
                     }`}
                   >
                     {link.name}
+                    <span className="font-sans text-xs text-nia-muted">0{i + 1}</span>
                   </Link>
                   {link.children?.map((child) => (
                     <Link
                       key={child.path}
                       href={child.path}
-                      className={`block py-3 pl-5 text-sm font-light border-b border-nia-border transition-colors ${
-                        isActive(child.path) ? 'text-nia-orange' : 'text-nia-black/60 hover:text-nia-orange'
+                      className={`block border-b border-nia-border py-3 pl-5 text-sm ${
+                        isActive(child.path) ? 'text-nia-orange' : 'text-nia-black/60'
                       }`}
                     >
                       {child.name}
                     </Link>
                   ))}
-                </div>
+                </motion.div>
               ))}
             </div>
-            <div className="px-6 pb-10">
-              <Link
-                href="/apply"
-                className="nia-btn w-full"
-              >
-                Apply for Membership
+            <div className="flex items-center gap-3 px-6 py-8">
+              {socials.map(({ label, href, Icon }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  className="grid h-11 w-11 place-items-center rounded-full bg-white text-nia-black"
+                >
+                  <Icon size={16} />
+                </a>
+              ))}
+              <Link href="/apply" className="nia-btn flex-1">
+                Apply for Membership <ArrowUpRight size={16} />
               </Link>
             </div>
           </motion.div>

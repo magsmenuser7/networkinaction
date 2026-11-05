@@ -1,16 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/*
+  Design language: editorial studio look — warm cream canvas, full-bleed photography,
+  uppercase serif headings beside small sans copy, frosted caption cards, dark footer.
+  Brand accents stay NIA orange + navy.
+*/
+
 @layer base {
   html {
     scroll-behavior: smooth;
+    font-variant-numeric: lining-nums;
   }
 
   body {
-    @apply bg-nia-ivory text-nia-black font-poppins antialiased;
+    @apply bg-nia-ivory text-nia-black font-sans antialiased;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -27,23 +32,71 @@
   }
 }
 
-/* Theme primitives (from the Canva "First Group" design). Use these on every page. */
+/* Page headings: uppercase serif everywhere inside <main>. !important so the
+   per-page weight/tracking utilities left over from the old theme don't fight it. */
+main h1,
+main h2 {
+  font-family: var(--font-serif), Georgia, serif !important;
+  font-weight: 400 !important;
+  text-transform: uppercase;
+  letter-spacing: -0.005em !important;
+  line-height: 1.02 !important;
+}
+main h3 {
+  font-family: var(--font-serif), Georgia, serif;
+  font-weight: 500 !important;
+  letter-spacing: 0 !important;
+  font-size: 1.35em;
+}
+
 @layer components {
-  .nia-shell { @apply max-w-[1200px] mx-auto px-6 lg:px-12; }
+  .nia-shell { @apply max-w-[1240px] mx-auto px-6 lg:px-12; }
+
+  /* Full-bleed photo hero. Pages may set --hero-img: url(...) inline. */
   .nia-hero {
-    @apply relative overflow-hidden text-white;
+    @apply relative overflow-hidden text-white grid content-end;
+    min-height: min(82svh, 780px);
+    background-color: #0E1C40;
     background-image:
-      radial-gradient(circle at 83% 26%, #e8772238 0, transparent 25%),
-      repeating-linear-gradient(130deg, transparent 0 54px, #ffffff0b 55px 56px),
-      linear-gradient(110deg, #0E1C40 0%, #152955 65%, #24375c 100%);
+      linear-gradient(180deg, rgba(8, 12, 28, 0.72) 0%, rgba(8, 12, 28, 0.55) 45%, rgba(8, 12, 28, 0.88) 100%),
+      var(--hero-img, url('/members1.jpeg'));
+    background-size: cover;
+    background-position: center;
   }
-  .nia-eyebrow { @apply text-xs font-semibold uppercase tracking-[0.18em] text-nia-rust; }
-  .nia-eyebrow-light { @apply text-xs font-semibold uppercase tracking-[0.18em] text-nia-peach; }
-  .nia-title { @apply font-bold tracking-[-0.04em] leading-tight; }
-  .nia-btn { @apply inline-flex items-center justify-center gap-2 rounded-full bg-nia-orange px-7 py-4 font-semibold text-nia-black transition hover:brightness-110 disabled:opacity-40 disabled:cursor-not-allowed; }
-  .nia-btn-outline { @apply inline-flex items-center justify-center gap-2 rounded-full border border-current px-7 py-4 font-semibold transition hover:text-nia-orange; }
-  .nia-card { @apply rounded-2xl border border-nia-border bg-white p-6 transition duration-200 hover:-translate-y-[3px] hover:border-[#e8ad80] hover:shadow-[0_16px_38px_#0d0d0d0b]; }
-  .nia-input { @apply w-full rounded-xl border border-[#CBC6BF] bg-white px-4 py-3 font-light text-nia-black focus:outline-none focus:border-nia-orange; }
+  .nia-hero > * { width: 100%; }
+
+  .nia-eyebrow { @apply text-[11px] font-medium uppercase tracking-[0.22em] text-nia-muted; }
+  .nia-eyebrow-light { @apply text-[11px] font-medium uppercase tracking-[0.22em] text-white/70; }
+  .nia-title { @apply leading-tight; }
+
+  /* Primary button: glow on hover, light sweep across, arrow nudges, squish on press. */
+  .nia-btn { @apply relative isolate inline-flex items-center justify-center gap-2 overflow-hidden rounded-full bg-nia-orange px-6 py-3.5 text-sm font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_30px_rgba(232,119,34,0.45)] active:translate-y-0 active:scale-[0.97] disabled:opacity-40 disabled:cursor-not-allowed; }
+  .nia-btn::before {
+    content: '';
+    @apply absolute inset-y-0 -left-1/2 -z-10 w-1/2 -skew-x-12 bg-gradient-to-r from-transparent via-white/45 to-transparent transition-[left] duration-700 ease-out;
+  }
+  .nia-btn:hover::before { left: 120%; }
+  .nia-btn svg { @apply transition-transform duration-300; }
+  .nia-btn:hover svg { transform: translate(3px, -3px); }
+
+  .nia-btn-outline { @apply inline-flex items-center justify-center gap-2 rounded-full border border-white/40 px-6 py-3.5 text-sm font-medium backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-white hover:text-nia-black hover:border-white active:scale-[0.97]; }
+
+  /* Small "explore" link with an arrow in a circle. */
+  .nia-link { @apply inline-flex items-center gap-3 text-xs font-medium uppercase tracking-[0.18em] text-nia-black transition hover:text-nia-orange; }
+  .nia-link-dot { @apply grid h-9 w-9 place-items-center rounded-full border border-nia-black/15 transition-all duration-300; }
+  .nia-link-dot svg { @apply transition-transform duration-300; }
+  .nia-link:hover .nia-link-dot, .group:hover .nia-link-dot { @apply scale-110 border-nia-orange bg-nia-orange text-white; }
+  .nia-link:hover .nia-link-dot svg, .group:hover .nia-link-dot svg { transform: rotate(45deg); }
+
+  .nia-card { @apply rounded-[18px] bg-white p-6 transition duration-300 hover:-translate-y-1.5 hover:shadow-[0_22px_50px_rgba(20,18,14,0.10)]; }
+
+  /* Image that zooms gently on hover of its .group parent. */
+  .nia-zoom { @apply transition-transform duration-[900ms] ease-[cubic-bezier(.22,1,.36,1)] group-hover:scale-[1.07]; }
+
+  /* Frosted caption card laid over photography. */
+  .nia-glass { @apply rounded-xl border border-white/50 bg-white/85 px-5 py-4 text-nia-black backdrop-blur-xl shadow-[0_10px_30px_rgba(0,0,0,0.12)]; }
+
+  .nia-input { @apply w-full rounded-xl border border-nia-border bg-nia-ivory px-4 py-3 font-light text-nia-black placeholder:text-nia-muted focus:outline-none focus:border-nia-orange focus:bg-white; }
 }
 
 @layer utilities {
@@ -61,7 +114,7 @@
   }
 
   .ring-nia {
-    box-shadow: 0 0 0 1px #E5E1DB;
+    box-shadow: 0 0 0 1px #E3DDD3;
   }
 
   .ring-nia-gold {
@@ -81,10 +134,19 @@
   }
 
   .shadow-ring {
-    box-shadow: 0px 0px 0px 1px #E5E1DB;
+    box-shadow: 0px 0px 0px 1px #E3DDD3;
   }
 
   .shadow-ring-hover:hover {
     box-shadow: 0px 0px 0px 1px #C6A969;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-kenburns,
+  .animate-bounce,
+  .animate-ping,
+  .animate-pulse {
+    animation: none !important;
   }
 }

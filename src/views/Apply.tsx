@@ -39,7 +39,7 @@ export default function Apply() {
 
   if (submitStatus === 'success') {
     return (
-      <div className="min-h-screen nia-hero flex items-center justify-center px-6 pt-36 pb-20 md:pt-40">
+      <div className="min-h-screen nia-hero flex items-center justify-center px-6 pt-36 pb-20 md:pt-40" style={{ ['--hero-img' as string]: "url('/ganeshteam.jpeg')" }}>
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
@@ -62,7 +62,7 @@ export default function Apply() {
 
   return (
     <div className="min-h-screen bg-nia-ivory">
-      <section className="nia-hero pt-36 md:pt-40 pb-20 md:pb-24">
+      <section className="nia-hero pt-36 md:pt-40 pb-20 md:pb-24" style={{ ['--hero-img' as string]: "url('/ganeshteam.jpeg')" }}>
         <div className="nia-shell">
           <AnimatedSection>
             <p className="nia-eyebrow-light mb-4">Apply for membership</p>

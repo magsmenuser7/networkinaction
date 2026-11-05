@@ -202,14 +202,14 @@ export default function Members() {
   return (
     <div className="bg-nia-ivory text-nia-black">
       {/* Hero */}
-      <section className="relative overflow-hidden text-white bg-[linear-gradient(110deg,#0E1C40_0%,#152955_65%,#24375c_100%)]">
+      <section className="nia-hero" style={{ ['--hero-img' as string]: "url('/members2.jpeg')" }}>
         <div
           aria-hidden="true"
           className="absolute inset-0 bg-[radial-gradient(circle_at_83%_26%,#e8772238_0,transparent_25%),repeating-linear-gradient(130deg,transparent_0_54px,#ffffff0b_55px_56px)]"
         />
         <div className="relative max-w-[1200px] mx-auto px-6 lg:px-12 grid items-center gap-10 pt-36 pb-20 md:grid-cols-[1.2fr_.8fr] md:pt-40 md:pb-28">
           <AnimatedSection>
-            <p className={`${eyebrow} mb-6 text-[#F4AD78]`}>Network in Action · Guntur</p>
+            <p className={`${eyebrow} mb-6 text-white/70`}>Network in Action · Guntur</p>
             <h1 className="text-4xl md:text-5xl font-bold tracking-[-0.04em] leading-[1.07] max-w-[770px]">
               Meet the First Group of City Partners
             </h1>
@@ -237,7 +237,7 @@ export default function Members() {
       {/* Intro */}
       <section className="max-w-[1200px] mx-auto px-6 lg:px-12 grid gap-8 py-20 md:grid-cols-[.7fr_1.3fr] md:py-24">
         <AnimatedSection>
-          <p className={`${eyebrow} mb-4 text-[#A84B07]`}>A shared table</p>
+          <p className={`${eyebrow} mb-4 text-nia-muted`}>A shared table</p>
           <h2 className="text-2xl md:text-3xl font-bold tracking-[-0.04em] leading-tight">
             Different fields.
             <br />
@@ -255,7 +255,7 @@ export default function Members() {
 
       {/* Directory */}
       <section id="members" className="scroll-mt-20 max-w-[1200px] mx-auto px-6 lg:px-12 py-20 md:py-24">
-        <p className={`${eyebrow} mb-3 text-[#A84B07]`}>The directory</p>
+        <p className={`${eyebrow} mb-3 text-nia-muted`}>The directory</p>
         <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
           <div>
             <h2 className="text-2xl md:text-3xl font-bold tracking-[-0.04em]">Meet the City Partners</h2>
@@ -332,7 +332,7 @@ export default function Members() {
       {/* Purpose */}
       <section className="bg-white py-20 md:py-24">
         <AnimatedSection className="max-w-[1200px] mx-auto px-6 lg:px-12">
-          <p className={`${eyebrow} mb-3 text-[#A84B07]`}>The purpose</p>
+          <p className={`${eyebrow} mb-3 text-nia-muted`}>The purpose</p>
           <h2 className="text-2xl md:text-3xl font-bold tracking-[-0.04em] mb-10">Why this group matters</h2>
           <div className="grid gap-8 md:grid-cols-4">
             {pillars.map((p) => (
@@ -349,14 +349,14 @@ export default function Members() {
       <section className="bg-[#0E1C40] py-20 text-white md:py-24">
         <div className="max-w-[1200px] mx-auto px-6 lg:px-12 grid gap-12 md:grid-cols-2">
           <div>
-            <p className={`${eyebrow} mb-4 text-[#F4AD78]`}>Get in touch</p>
+            <p className={`${eyebrow} mb-4 text-white/70`}>Get in touch</p>
             <h2 className="text-2xl md:text-3xl font-bold tracking-[-0.04em]">Start a conversation with NIA Guntur.</h2>
             <p className="mt-6 max-w-md font-light leading-relaxed text-white/80">
               Interested in learning more about the first group? Reach out using the details here.
             </p>
           </div>
           <address className="not-italic md:pt-10">
-            <p className={`${eyebrow} mb-3 text-[#F4AD78]`}>Call</p>
+            <p className={`${eyebrow} mb-3 text-white/70`}>Call</p>
             <div className="flex flex-wrap gap-x-4 gap-y-2">
               {['+91 9121315444', '9703356332', '9885050850'].map((n) => (
                 <a key={n} href={`tel:+91${n.replace(/\D/g, '').slice(-10)}`} className="underline underline-offset-4 hover:text-[#F4AD78]">

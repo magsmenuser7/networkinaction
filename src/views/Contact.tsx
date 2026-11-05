@@ -39,7 +39,7 @@ export default function Contact() {
 
   return (
     <div className="min-h-screen bg-nia-ivory">
-      <section className="nia-hero pt-36 md:pt-40 pb-20 md:pb-24">
+      <section className="nia-hero pt-36 md:pt-40 pb-20 md:pb-24" style={{ ['--hero-img' as string]: "url('/a56db7d4-1a61-4b46-9024-acd83239df9f.png')" }}>
         <div className="nia-shell">
           <AnimatedSection>
             <p className="nia-eyebrow-light mb-4">Get in touch</p>

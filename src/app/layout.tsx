@@ -1,8 +1,13 @@
 import type { Metadata } from 'next';
+import { Cormorant_Garamond, Inter } from 'next/font/google';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import WhatsAppButton from '../components/WhatsAppButton';
+import { ScrollProgress } from '../components/Motion';
 import '../index.css';
+
+const serif = Cormorant_Garamond({ subsets: ['latin'], weight: ['400', '500', '600'], variable: '--font-serif' });
+const sans = Inter({ subsets: ['latin'], variable: '--font-sans' });
 
 const ogImage = 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1200&h=630&dpr=1';
 
@@ -68,10 +73,11 @@ const orgJsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${serif.variable} ${sans.variable}`}>
       <body>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }} />
-        <div className="min-h-screen bg-white flex flex-col">
+        <div className="min-h-screen flex flex-col">
+          <ScrollProgress />
           <Navigation />
           <main className="flex-1">{children}</main>
           <Footer />

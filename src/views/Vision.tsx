@@ -35,7 +35,7 @@ export default function Vision() {
   return (
     <div className="min-h-screen bg-nia-ivory text-nia-black">
       {/* Hero */}
-      <section className="nia-hero">
+      <section className="nia-hero" style={{ ['--hero-img' as string]: "url('/1775282604835.jpg')" }}>
         <div className="nia-shell relative grid items-center gap-10 pt-36 pb-20 md:grid-cols-[1.1fr_.9fr] md:pt-40 md:pb-28">
           <AnimatedSection>
             <p className="nia-eyebrow-light mb-6">NIA Guntur vision</p>

@@ -47,7 +47,7 @@ export default function CityPartners() {
 
   return (
     <div className="min-h-screen bg-nia-ivory text-nia-black">
-      <section className="nia-hero">
+      <section className="nia-hero" style={{ ['--hero-img' as string]: "url('/threefounders2.jpeg')" }}>
         <div
           className="absolute inset-0 bg-cover bg-center opacity-15 mix-blend-luminosity"
           style={{ backgroundImage: "url('https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1920&h=800&dpr=1')" }}

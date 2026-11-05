@@ -35,7 +35,7 @@ export default function VinodT() {
 
   return (
     <div className="min-h-screen bg-nia-ivory text-nia-black">
-      <section className="nia-hero">
+      <section className="nia-hero" style={{ ['--hero-img' as string]: "url('/vinod.jpeg')" }}>
         <div className="nia-shell relative grid items-center gap-10 pt-36 pb-16 md:pt-40 md:pb-20 lg:grid-cols-[1.1fr_.9fr]">
           <div>
             <nav aria-label="Breadcrumb" className="flex items-center gap-3 mb-8 text-sm">

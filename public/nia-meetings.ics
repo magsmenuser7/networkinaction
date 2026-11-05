@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Network In Action Guntur//Meetings//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:NIA Guntur Meetings
+X-WR-TIMEZONE:Asia/Kolkata
+X-WR-CALDESC:Casual\, Formal and Sports meets of Network In Action Guntur
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+X-PUBLISHED-TTL:P1D
+BEGIN:VEVENT
+UID:nia-guntur-casual@networkinactionguntur.com
+DTSTAMP:20261105T000000Z
+SUMMARY:NIA Guntur — Casual Meet
+DTSTART;VALUE=DATE:20261104
+DTEND;VALUE=DATE:20261105
+RRULE:FREQ=MONTHLY;BYDAY=1WE;UNTIL=20271231
+DESCRIPTION:Network In Action Guntur monthly Casual Meet. Timing and venue 
+ are shared by the NIA team before each meeting.\nhttps://networkinactiongu
+ ntur.com
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:nia-guntur-formal@networkinactionguntur.com
+DTSTAMP:20261105T000000Z
+SUMMARY:NIA Guntur — Formal Meet
+DTSTART;VALUE=DATE:20261118
+DTEND;VALUE=DATE:20261119
+RRULE:FREQ=MONTHLY;BYDAY=3WE;UNTIL=20271231
+DESCRIPTION:Network In Action Guntur monthly Formal Meet. Timing and venue 
+ are shared by the NIA team before each meeting.\nhttps://networkinactiongu
+ ntur.com
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:nia-guntur-sports@networkinactionguntur.com
+DTSTAMP:20261105T000000Z
+SUMMARY:NIA Guntur — Sports Meet
+DTSTART;VALUE=DATE:20261125
+DTEND;VALUE=DATE:20261126
+RRULE:FREQ=MONTHLY;BYDAY=4WE;UNTIL=20271231
+DESCRIPTION:Network In Action Guntur monthly Sports Meet. Timing and venue 
+ are shared by the NIA team before each meeting.\nhttps://networkinactiongu
+ ntur.com
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR

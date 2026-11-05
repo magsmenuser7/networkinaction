@@ -22,13 +22,9 @@ export default function ThinkSpace() {
   return (
     <div className="bg-nia-ivory text-nia-black">
       {/* Hero */}
-      <section className="relative overflow-hidden text-white bg-[linear-gradient(110deg,#0E1C40_0%,#152955_65%,#24375c_100%)]">
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 bg-[radial-gradient(circle_at_83%_26%,#e8772238_0,transparent_25%),repeating-linear-gradient(130deg,transparent_0_54px,#ffffff0b_55px_56px)]"
-        />
+      <section className="nia-hero" style={{ ['--hero-img' as string]: "url('/stagepeople.jpeg')" }}>
         <AnimatedSection className="relative max-w-[1200px] mx-auto px-6 lg:px-12 pt-36 pb-16 md:pt-40 md:pb-20">
-          <p className={`${eyebrow} mb-6 text-[#F4AD78]`}>A conversation series by NIA Guntur</p>
+          <p className={`${eyebrow} mb-6 text-white/70`}>A conversation series by NIA Guntur</p>
           <h1 className="text-5xl md:text-7xl font-bold tracking-[-0.05em] leading-[1.02]">
             Think Space<span className="text-nia-orange">.</span>
           </h1>
@@ -44,7 +40,7 @@ export default function ThinkSpace() {
       {/* Latest episode */}
       <section id="latest" className="max-w-[1200px] mx-auto px-6 lg:px-12 py-20 md:py-24">
         <AnimatedSection>
-          <p className={`${eyebrow} mb-3 text-[#A84B07]`}>Latest episode</p>
+          <p className={`${eyebrow} mb-3 text-nia-muted`}>Latest episode</p>
           <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
             <h2 className="text-2xl md:text-3xl font-bold tracking-[-0.04em]">Watch the newest conversation</h2>
             <a
@@ -74,7 +70,7 @@ export default function ThinkSpace() {
       <section className="bg-white py-20 md:py-24">
         <div className="max-w-[1200px] mx-auto px-6 lg:px-12 grid gap-8 md:grid-cols-[.7fr_1.3fr]">
           <AnimatedSection>
-            <p className={`${eyebrow} mb-4 text-[#A84B07]`}>Why Think Space</p>
+            <p className={`${eyebrow} mb-4 text-nia-muted`}>Why Think Space</p>
             <h2 className="text-2xl md:text-3xl font-bold tracking-[-0.04em] leading-tight">
               Every person sees
               <br />
@@ -95,7 +91,7 @@ export default function ThinkSpace() {
       {/* Themes */}
       <section className="max-w-[1200px] mx-auto px-6 lg:px-12 py-20 md:py-24">
         <AnimatedSection>
-          <p className={`${eyebrow} mb-3 text-[#A84B07]`}>What we talk about</p>
+          <p className={`${eyebrow} mb-3 text-nia-muted`}>What we talk about</p>
           <h2 className="text-2xl md:text-3xl font-bold tracking-[-0.04em] mb-10">In every episode</h2>
           <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-4">
             {themes.map((t) => (
@@ -112,7 +108,7 @@ export default function ThinkSpace() {
       <section className="bg-[#0E1C40] py-20 text-white">
         <AnimatedSection className="max-w-[1200px] mx-auto px-6 lg:px-12 flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
           <div>
-            <p className={`${eyebrow} mb-4 text-[#F4AD78]`}>Never miss an episode</p>
+            <p className={`${eyebrow} mb-4 text-white/70`}>Never miss an episode</p>
             <h2 className="text-2xl md:text-3xl font-bold tracking-[-0.04em]">Subscribe to NIA Guntur on YouTube.</h2>
           </div>
           <a

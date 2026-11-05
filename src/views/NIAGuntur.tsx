@@ -41,7 +41,7 @@ export default function NIAGuntur() {
   return (
     <div className="min-h-screen bg-nia-ivory text-nia-black">
       {/* Hero */}
-      <section className="nia-hero">
+      <section className="nia-hero" style={{ ['--hero-img' as string]: "url('/members1.jpeg')" }}>
         <div className="nia-shell relative grid items-center gap-10 pt-36 pb-20 md:grid-cols-[1.2fr_.8fr] md:pt-40 md:pb-28">
           <AnimatedSection>
             <p className="nia-eyebrow-light mb-6">About NIA Guntur</p>
