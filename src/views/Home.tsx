@@ -1,18 +1,18 @@
+'use client';
+
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { ArrowRight, Star, CheckCircle, Users, Globe, TrendingUp, Library, Share2, GraduationCap } from 'lucide-react';
 import AnimatedSection from '../components/AnimatedSection';
-import { useSEO } from '../hooks/useSEO';
-import logo from "/nia-logo-guntur.png"
-import sandeep from "/sandeep2.jpeg"
-import group from "/members2.jpeg"
-import group2 from "/threeheads1.jpeg"
-import group3 from "/members1.jpeg"
+const sandeep = '/sandeep2.jpeg';
+const group = '/members2.jpeg';
+const group2 = '/threeheads1.jpeg';
+const group3 = '/members1.jpeg';
 import { useState, useEffect } from "react";
 
-import vinod from "/vinod.jpeg"
-import teampic from "/1775282604835.jpg"
-import team from "/ganeshteam.jpeg"
+const vinod = '/vinod.jpeg';
+const teampic = '/1775282604835.jpg';
+const team = '/ganeshteam.jpeg';
 
 const c3r3 = [
   { icon: GraduationCap, code: 'C1', label: 'Coaching', desc: 'World-class ActionCOACH and Brian Tracy certified coaches embedded in every chapter — giving members direct access to proven growth frameworks.' },
@@ -76,12 +76,6 @@ export default function Home() {
     return () => clearInterval(interval);
   }, []);
 
-  useSEO({
-    title: 'NIA Guntur — The Right Room Changes Everything',
-    description: "Network In Action Guntur is Andhra Pradesh's most exclusive, invite-only business community. Structured meetings. Measurable growth. Real referrals.",
-    keywords: 'NIA Guntur, Network In Action Guntur, Business Networking Guntur, Entrepreneur Community Guntur',
-    image: logo,
-  });
 
   return (
     <div className="min-h-screen bg-nia-ivory text-nia-black">
@@ -137,10 +131,10 @@ export default function Home() {
               transition={{ delay: 1.4, duration: 0.6 }}
               className="flex flex-col sm:flex-row gap-4"
             >
-              <Link to="/apply" className="nia-btn">
+              <Link href="/apply" className="nia-btn">
                 Apply for Membership <ArrowRight size={16} />
               </Link>
-              <Link to="/about-nia" className="nia-btn-outline text-white">
+              <Link href="/about-nia" className="nia-btn-outline text-white">
                 Learn About NIA
               </Link>
             </motion.div>
@@ -339,7 +333,7 @@ export default function Home() {
               <h2 className="nia-title text-2xl md:text-3xl">Meet the City Partners.</h2>
             </div>
             <Link
-              to="/city-partners"
+              href="/city-partners"
               className="inline-flex items-center gap-2 text-sm font-semibold text-nia-rust hover:text-nia-orange transition-colors"
             >
               View All City Partners <ArrowRight size={14} />
@@ -348,7 +342,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {cityPartners.map((partner, i) => (
               <AnimatedSection key={partner.name} delay={i * 0.1}>
-                <Link to={partner.path} className="group block">
+                <Link href={partner.path} className="group block">
                   <div className="relative overflow-hidden aspect-[3/4] rounded-2xl border border-nia-border">
                     <div
                       className="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
@@ -392,10 +386,10 @@ export default function Home() {
               Applications for NIA Guntur are reviewed personally. Seats are limited by design. The right room is waiting.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link to="/apply" className="nia-btn">
+              <Link href="/apply" className="nia-btn">
                 Apply for Membership <ArrowRight size={16} />
               </Link>
-              <Link to="/contact" className="nia-btn-outline text-white">
+              <Link href="/contact" className="nia-btn-outline text-white">
                 Contact Us First
               </Link>
             </div>

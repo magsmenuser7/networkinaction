@@ -1,9 +1,10 @@
-import { Link } from 'react-router-dom';
+'use client';
+
+import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import AnimatedSection from '../components/AnimatedSection';
-import { useSEO } from '../hooks/useSEO';
-import sandeepcropedpic from "/sandeepsircroppedimage.jpg"
-import vinodcroppedpic from "/vinodsircroppedpic.png"
+const sandeepcropedpic = '/sandeepsircroppedimage.jpg';
+const vinodcroppedpic = '/vinodsircroppedpic.png';
 const partners = [
   {
     name: 'Sandeep N',
@@ -43,11 +44,6 @@ const poweredBy = [
 ];
 
 export default function CityPartners() {
-  useSEO({
-    title: 'City Partners — NIA Guntur',
-    description: "Meet the NIA Guntur City Partners — Sandeep N and Vinod Reddy T. Two leaders building Guntur's premier business ecosystem.",
-    keywords: 'NIA Guntur City Partners, Sandeep N, Vinod Reddy T, NIA Guntur Leadership',
-  });
 
   return (
     <div className="min-h-screen bg-nia-ivory text-nia-black">
@@ -117,7 +113,7 @@ export default function CityPartners() {
                       </span>
                     ))}
                   </div>
-                  <Link to={partner.path} className="nia-btn self-start">
+                  <Link href={partner.path} className="nia-btn self-start">
                     Full Profile <ArrowRight size={16} />
                   </Link>
                 </div>
@@ -157,7 +153,7 @@ export default function CityPartners() {
           <p className="font-light text-white/80 max-w-md mx-auto mb-10 leading-relaxed">
             Applications for Guntur are open. Every application is reviewed personally.
           </p>
-          <Link to="/apply" className="nia-btn">
+          <Link href="/apply" className="nia-btn">
             Apply for Membership <ArrowRight size={16} />
           </Link>
         </AnimatedSection>

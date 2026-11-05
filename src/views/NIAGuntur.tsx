@@ -1,6 +1,7 @@
-import { Link } from 'react-router-dom';
+'use client';
+
+import Link from 'next/link';
 import AnimatedSection from '../components/AnimatedSection';
-import { useSEO } from '../hooks/useSEO';
 
 const whatWeDo = [
   {
@@ -36,11 +37,6 @@ const meetingTypes = [
 ];
 
 export default function NIAGuntur() {
-  useSEO({
-    title: 'About NIA Guntur',
-    description: 'Network In Action Guntur is a curated, invite-only business community for serious entrepreneurs. Learn about our structured approach to measurable business growth.',
-    keywords: 'About NIA Guntur, Network In Action Guntur, Business Community Guntur, Curated Networking Andhra Pradesh',
-  });
 
   return (
     <div className="min-h-screen bg-nia-ivory text-nia-black">
@@ -222,7 +218,7 @@ export default function NIAGuntur() {
             To build a dynamic ecosystem where individuals and organizations converge to foster collaboration, fuel growth and positively impact 1 million+ lives.
           </h2>
           <div className="mt-10">
-            <Link to="/apply" className="nia-btn">
+            <Link href="/apply" className="nia-btn">
               Request Access
             </Link>
           </div>

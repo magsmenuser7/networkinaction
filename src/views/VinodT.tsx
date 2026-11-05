@@ -1,7 +1,8 @@
-import { Link } from 'react-router-dom';
+'use client';
+
+import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import AnimatedSection from '../components/AnimatedSection';
-import { useSEO } from '../hooks/useSEO';
 import { motion } from 'framer-motion';
 
 const differentiators = [
@@ -31,11 +32,6 @@ const ventures = [
 ];
 
 export default function VinodT() {
-  useSEO({
-    title: 'Vinod Reddy T — City Partner NIA Guntur',
-    description: 'Vinod Reddy Tiyyagura is a serial entrepreneur, founder of Raaga Infra, and Joint Secretary of CREDAI AP. City Partner of NIA Guntur.',
-    keywords: 'Vinod Reddy T NIA Guntur, Vinod Raaga Infra, CREDAI AP, Guntur Builder, Serial Entrepreneur Guntur',
-  });
 
   return (
     <div className="min-h-screen bg-nia-ivory text-nia-black">
@@ -43,7 +39,7 @@ export default function VinodT() {
         <div className="nia-shell relative grid items-center gap-10 pt-36 pb-16 md:pt-40 md:pb-20 lg:grid-cols-[1.1fr_.9fr]">
           <div>
             <nav aria-label="Breadcrumb" className="flex items-center gap-3 mb-8 text-sm">
-              <Link to="/city-partners" className="font-light text-white/70 hover:text-white transition-colors">
+              <Link href="/city-partners" className="font-light text-white/70 hover:text-white transition-colors">
                 City Partners
               </Link>
               <span className="text-white/40">/</span>
@@ -171,7 +167,7 @@ export default function VinodT() {
               +91 98850 50850
             </a>
           </div>
-          <Link to="/apply" className="nia-btn self-start md:self-auto shrink-0">
+          <Link href="/apply" className="nia-btn self-start md:self-auto shrink-0">
             Apply for Membership <ArrowRight size={16} />
           </Link>
         </AnimatedSection>

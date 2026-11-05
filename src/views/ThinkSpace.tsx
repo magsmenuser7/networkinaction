@@ -1,6 +1,7 @@
+'use client';
+
 import { ArrowUpRight } from 'lucide-react';
 import AnimatedSection from '../components/AnimatedSection';
-import { useSEO } from '../hooks/useSEO';
 
 // "UULF" + channel id (minus "UC") is YouTube's auto-maintained long-form uploads playlist (no Shorts).
 // Embedding it always plays the newest long video, so new episodes appear without code changes.
@@ -17,11 +18,6 @@ const themes = [
 ];
 
 export default function ThinkSpace() {
-  useSEO({
-    title: 'Think Space',
-    description: 'Think Space is a conversation series by Network In Action Guntur where members share ideas, perspectives and experiences that go beyond business.',
-    keywords: 'Think Space, NIA Guntur podcast, Network In Action Guntur, business conversations',
-  });
 
   return (
     <div className="bg-nia-ivory text-nia-black">

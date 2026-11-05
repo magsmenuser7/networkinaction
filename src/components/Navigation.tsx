@@ -1,8 +1,11 @@
-import { Link, useLocation } from 'react-router-dom';
+'use client';
+
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useState, useEffect, useRef } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import logo from "/nia-logo-guntur-trim.png"
+const logo = '/nia-logo-guntur-trim.png';
 
 const cityPartnerLinks = [
   { name: 'Sandeep N', path: '/city-partners/sandeep-n' },
@@ -19,7 +22,7 @@ const navLinks = [
 ];
 
 export default function Navigation() {
-  const location = useLocation();
+  const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -34,7 +37,7 @@ export default function Navigation() {
   useEffect(() => {
     setIsMobileMenuOpen(false);
     setDropdownOpen(false);
-  }, [location.pathname]);
+  }, [pathname]);
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
@@ -47,7 +50,7 @@ export default function Navigation() {
   }, []);
 
   const isActive = (path: string) =>
-    location.pathname === path || location.pathname.startsWith(path + '/');
+    pathname === path || pathname.startsWith(path + '/');
 
   return (
     <>
@@ -64,7 +67,7 @@ export default function Navigation() {
 
           <div className="z-199">
           
-          <Link to="/" className="flex items-center gap-3 z-100 shrink-0">
+          <Link href="/" className="flex items-center gap-3 z-100 shrink-0">
             <img src={logo} alt="NIA Guntur" className="h-9 lg:h-10 w-auto" />
             
           </Link>
@@ -104,7 +107,7 @@ export default function Navigation() {
               className="absolute top-full left-0 mt-3 w-52 bg-nia-ivory border border-nia-border rounded-xl shadow-editorial overflow-hidden"
             >
               <Link
-                to={link.path}
+                href={link.path}
                 className="block px-5 py-3.5 text-sm font-light text-nia-black hover:bg-nia-darker hover:text-nia-orange transition-colors border-b border-nia-border"
               >
                 All Partners
@@ -113,7 +116,7 @@ export default function Navigation() {
               {link.children.map((child) => (
                 <Link
                   key={child.path}
-                  to={child.path}
+                  href={child.path}
                   className={`block px-5 py-3.5 text-sm font-light transition-colors hover:bg-nia-darker ${
                     isActive(child.path)
                       ? 'text-nia-orange'
@@ -130,7 +133,7 @@ export default function Navigation() {
     ) : (
       <Link
         key={link.name}
-        to={link.path}
+        href={link.path}
         className={`text-[15px] font-light transition-colors duration-200 ${
           isActive(link.path)
             ? 'text-nia-orange font-medium'
@@ -145,7 +148,7 @@ export default function Navigation() {
 
           <div className="hidden lg:flex items-center gap-4">
             <Link
-              to="/apply"
+              href="/apply"
               className="nia-btn !px-5 !py-2.5 text-sm"
             >
               Apply for Membership
@@ -175,7 +178,7 @@ export default function Navigation() {
               {navLinks.map((link) => (
                 <div key={link.name}>
                   <Link
-                    to={link.path}
+                    href={link.path}
                     className={`block py-4 text-base font-light border-b border-nia-border transition-colors ${
                       isActive(link.path) ? 'text-nia-orange' : 'text-nia-black'
                     }`}
@@ -185,7 +188,7 @@ export default function Navigation() {
                   {link.children?.map((child) => (
                     <Link
                       key={child.path}
-                      to={child.path}
+                      href={child.path}
                       className={`block py-3 pl-5 text-sm font-light border-b border-nia-border transition-colors ${
                         isActive(child.path) ? 'text-nia-orange' : 'text-nia-black/60 hover:text-nia-orange'
                       }`}
@@ -198,7 +201,7 @@ export default function Navigation() {
             </div>
             <div className="px-6 pb-10">
               <Link
-                to="/apply"
+                href="/apply"
                 className="nia-btn w-full"
               >
                 Apply for Membership

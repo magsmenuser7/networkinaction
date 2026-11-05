@@ -1,9 +1,10 @@
-import { Link } from 'react-router-dom';
+'use client';
+
+import Link from 'next/link';
 import { Target, Globe, Users, Lightbulb, Award, TrendingUp, ArrowRight } from 'lucide-react';
 import AnimatedSection from '../components/AnimatedSection';
-import { useSEO } from '../hooks/useSEO';
-import group4 from "/sandeep.jpeg"
-import group5 from "/stagepeople2.jpeg"
+const group4 = '/sandeep.jpeg';
+const group5 = '/stagepeople2.jpeg';
 
 const pillars = [
   { icon: Target, title: 'Purposeful Community', desc: 'Every member is handpicked. Every meeting is structured. No noise. Only signal.' },
@@ -30,12 +31,6 @@ const indianCities = [
 ];
 
 export default function Vision() {
-  useSEO({
-    title: 'NIA Guntur Vision',
-    description: 'The NIA Guntur Vision: building the most powerful and structured business community in Andhra Pradesh, aligned with the rise of Amaravathi.',
-    keywords: 'NIA Guntur Vision, Network In Action Vision, Guntur Business Community, Amaravathi Business Ecosystem',
-    image: 'https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=1200&h=630&dpr=1',
-  });
 
   return (
     <div className="min-h-screen bg-nia-ivory text-nia-black">
@@ -191,7 +186,7 @@ export default function Vision() {
           <p className="mx-auto mt-6 mb-10 max-w-md font-light leading-relaxed text-white/80">
             Join the entrepreneurs who are building Guntur's future together — with structure, accountability, and real relationships.
           </p>
-          <Link to="/apply" className="nia-btn">
+          <Link href="/apply" className="nia-btn">
             Apply for Membership <ArrowRight size={16} />
           </Link>
         </AnimatedSection>

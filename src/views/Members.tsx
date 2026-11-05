@@ -1,6 +1,7 @@
+'use client';
+
 import { useState } from 'react';
 import AnimatedSection from '../components/AnimatedSection';
-import { useSEO } from '../hooks/useSEO';
 
 type Member = { name: string; role: string; sectors: string[]; bio: string };
 
@@ -187,11 +188,6 @@ const allSectors = [...new Set(members.flatMap((m) => m.sectors))].sort();
 const eyebrow = 'text-xs font-semibold uppercase tracking-[0.18em]';
 
 export default function Members() {
-  useSEO({
-    title: 'Meet the First Group of City Partners',
-    description: 'Business leaders building trusted connections and new opportunities together in Guntur. Explore the first NIA Guntur group.',
-    keywords: 'NIA Guntur Members, Network In Action Guntur Community, City Partners',
-  });
 
   const [query, setQuery] = useState('');
   const [sector, setSector] = useState('');

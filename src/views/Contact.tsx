@@ -1,17 +1,13 @@
+'use client';
+
 import { useState } from 'react';
 import { MapPin, Phone, Mail, Clock, ArrowRight } from 'lucide-react';
 import AnimatedSection from '../components/AnimatedSection';
-import { useSEO } from '../hooks/useSEO';
-// import { supabase } from '../lib/supabase';
+import { supabase } from '../lib/supabase';
 import { motion } from 'framer-motion';
-import building from "/a56db7d4-1a61-4b46-9024-acd83239df9f.png"
+const building = '/a56db7d4-1a61-4b46-9024-acd83239df9f.png';
 
 export default function Contact() {
-  useSEO({
-    title: 'Contact NIA Guntur',
-    description: 'Reach out to Network In Action Guntur. Visit us at Icon Spaces, Brodipet, Guntur or call our team directly.',
-    keywords: 'NIA Guntur Contact, Network In Action Guntur Address, Guntur Business Community Contact',
-  });
 
   const [formData, setFormData] = useState({ full_name: '', mobile: '', business: '', message: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -26,6 +22,7 @@ export default function Contact() {
     setIsSubmitting(true);
     setSubmitStatus('idle');
     try {
+      if (!supabase) throw new Error('Supabase not configured');
       const { error } = await supabase.from('contact_inquiries').insert([formData]);
       if (error) throw error;
       setSubmitStatus('success');

@@ -1,7 +1,8 @@
-import { Link } from 'react-router-dom';
+'use client';
+
+import Link from 'next/link';
 import { ExternalLink, ArrowRight } from 'lucide-react';
 import AnimatedSection from '../components/AnimatedSection';
-import { useSEO } from '../hooks/useSEO';
 import { motion } from 'framer-motion';
 
 const differentiators = [
@@ -24,11 +25,6 @@ const ventures = [
 ];
 
 export default function SandeepN() {
-  useSEO({
-    title: 'Sandeep N — City Partner NIA Guntur',
-    description: "Sandeep N is India's rare Legal-Blended Brand Architect, TedX speaker, and founder of Magsmen and InTalks. City Partner of NIA Guntur.",
-    keywords: 'Sandeep N NIA Guntur, Sandeep Magsmen, InTalks Guntur, Brand Architect Guntur, TedX Speaker Guntur',
-  });
 
   return (
     <div className="min-h-screen bg-nia-ivory text-nia-black">
@@ -36,7 +32,7 @@ export default function SandeepN() {
         <div className="nia-shell relative grid items-center gap-10 pt-36 pb-16 md:pt-40 md:pb-20 lg:grid-cols-[1.1fr_.9fr]">
           <div>
             <nav aria-label="Breadcrumb" className="flex items-center gap-3 mb-8 text-sm">
-              <Link to="/city-partners" className="font-light text-white/70 hover:text-white transition-colors">
+              <Link href="/city-partners" className="font-light text-white/70 hover:text-white transition-colors">
                 City Partners
               </Link>
               <span className="text-white/40">/</span>
@@ -176,7 +172,7 @@ export default function SandeepN() {
               +91 97033 56332
             </a>
           </div>
-          <Link to="/apply" className="nia-btn self-start md:self-auto shrink-0">
+          <Link href="/apply" className="nia-btn self-start md:self-auto shrink-0">
             Apply for Membership <ArrowRight size={16} />
           </Link>
         </AnimatedSection>

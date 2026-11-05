@@ -1,15 +1,11 @@
+'use client';
+
 import { useState } from 'react';
 import AnimatedSection from '../components/AnimatedSection';
-import { useSEO } from '../hooks/useSEO';
-// import { supabase } from '../lib/supabase';
+import { supabase } from '../lib/supabase';
 import { motion } from 'framer-motion';
 
 export default function Apply() {
-  useSEO({
-    title: 'Apply for Membership',
-    description: 'Apply to join Network In Action Guntur — an invite-only, curated business community for serious entrepreneurs in Andhra Pradesh.',
-    keywords: 'NIA Guntur Apply, Business Membership Application, Network In Action Join Guntur',
-  });
 
   const [formData, setFormData] = useState({
     full_name: '', business: '', designation: '', industry: '',
@@ -24,6 +20,7 @@ export default function Apply() {
     setIsSubmitting(true);
     setSubmitStatus('idle');
     try {
+      if (!supabase) throw new Error('Supabase not configured');
       const { error } = await supabase.from('membership_applications').insert([formData]);
       if (error) throw error;
       setSubmitStatus('success');

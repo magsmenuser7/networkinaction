@@ -1,6 +1,8 @@
-import { Link } from 'react-router-dom';
+'use client';
+
+import Link from 'next/link';
 import { MapPin, Phone, Mail, Instagram, Youtube, Facebook } from 'lucide-react';
-import logo from "/nia-logo-guntur-trim.png"
+const logo = '/nia-logo-guntur-trim.png';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -72,7 +74,7 @@ export default function Footer() {
               ].map((link) => (
                 <li key={link.path}>
                   <Link
-                    to={link.path}
+                    href={link.path}
                     className="text-sm font-light text-white/70 hover:text-nia-peach transition-colors"
                   >
                     {link.name}
@@ -137,7 +139,7 @@ export default function Footer() {
           </p>
           <div className="flex items-center gap-6">
             <Link
-              to="/privacy-policy"
+              href="/privacy-policy"
               className="text-xs font-light text-white/50 hover:text-nia-peach transition-colors"
             >
               Privacy Policy
