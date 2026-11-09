@@ -1,3 +1,5 @@
+'use client';
+
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MessageCircle, X } from 'lucide-react';
@@ -41,23 +43,23 @@ export default function WhatsAppButton() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 8, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="bg-[#141414] border border-[#252525] p-4 max-w-[260px] shadow-xl"
+            className="max-w-[270px] rounded-2xl bg-white/90 p-5 backdrop-blur-xl shadow-[0_18px_40px_rgba(0,0,0,0.15)]"
           >
             <div className="flex items-start justify-between gap-3 mb-3">
               <p className="nia-eyebrow">NIA Guntur</p>
-              <button onClick={handleDismiss} className="text-[#666666] hover:text-white transition-colors shrink-0">
+              <button onClick={handleDismiss} className="text-nia-muted hover:text-nia-black transition-colors shrink-0">
                 <X size={14} />
               </button>
             </div>
-            <p className="text-sm font-light text-white mb-1">Thinking about joining?</p>
-            <p className="text-xs font-light text-[#888888] mb-4 leading-relaxed">
+            <p className="font-serif text-xl text-nia-black mb-1">Thinking about joining?</p>
+            <p className="text-xs font-light text-nia-gray mb-4 leading-relaxed">
               Chat with us on WhatsApp. We review every inquiry personally.
             </p>
             <a
               href={`https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="block text-center text-xs font-semibold tracking-widest uppercase bg-[#25D366] text-white px-4 py-3 hover:bg-[#20bd5a] transition-colors duration-200"
+              className="block rounded-full text-center text-xs font-medium tracking-[0.18em] uppercase bg-[#25D366] text-white px-4 py-3 hover:bg-[#20bd5a] transition-colors duration-200"
             >
               Start Conversation
             </a>
@@ -75,7 +77,7 @@ export default function WhatsAppButton() {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.8 }}
             transition={{ duration: 0.3 }}
-            className="w-14 h-14 bg-[#25D366] flex items-center justify-center shadow-lg hover:bg-[#20bd5a] transition-colors duration-200"
+            className="w-14 h-14 rounded-full bg-[#25D366] flex items-center justify-center shadow-lg hover:bg-[#20bd5a] transition-colors duration-200"
             style={{ boxShadow: '0 4px 24px rgba(37,211,102,0.3)' }}
             aria-label="Chat on WhatsApp"
           >

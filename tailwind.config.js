@@ -1,28 +1,36 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  content: ['./src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
+      keyframes: {
+        kenburns: { from: { transform: 'scale(1.12)' }, to: { transform: 'scale(1)' } },
+      },
+      animation: {
+        kenburns: 'kenburns 9s cubic-bezier(.22,1,.36,1) both',
+      },
       colors: {
         'nia-black': '#0D0D0D',
         'nia-charcoal': '#141414',
-        'nia-dark': '#EDE9E3',
-        'nia-darker': '#F7F5F2',
-        'nia-ivory': '#F5F3EF',
+        'nia-dark': '#E9E3D9',
+        'nia-darker': '#F7F4EF',
+        'nia-ivory': '#F2EEE7',
         'nia-gold': '#C6A969',
         'nia-orange': '#E87722',
-        'nia-gray': '#555555',
-        'nia-muted': '#999999',
+        'nia-gray': '#5E5A54',
+        'nia-muted': '#8B847A',
         'nia-white': '#FFFFFF',
-        'nia-border': '#E5E1DB',
+        'nia-border': '#E3DDD3',
         'nia-border-light': '#E0E0E0',
         'nia-navy': '#0E1C40',
         'nia-rust': '#A84B07',
         'nia-peach': '#F4AD78',
       },
       fontFamily: {
-        'poppins': ['Poppins', 'sans-serif'],
-        'playfair': ['"Playfair Display"', 'Georgia', 'serif'],
+        sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],
+        serif: ['var(--font-serif)', 'Georgia', 'serif'],
+        poppins: ['var(--font-sans)', 'system-ui', 'sans-serif'],
+        playfair: ['var(--font-serif)', 'Georgia', 'serif'],
       },
       fontWeight: {
         'light': '300',

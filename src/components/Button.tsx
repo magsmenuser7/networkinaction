@@ -1,4 +1,6 @@
-import { Link } from 'react-router-dom';
+'use client';
+
+import Link from 'next/link';
 
 interface ButtonProps {
   to?: string;
@@ -33,7 +35,7 @@ export default function Button({
 
   if (to) {
     return (
-      <Link to={to} className={classes}>
+      <Link href={to} className={classes}>
         {children}
       </Link>
     );
