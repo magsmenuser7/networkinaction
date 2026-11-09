@@ -30,7 +30,7 @@ const members: Member[] = [
     bio: 'Rakesh Chukkapalli represents a generation of business leadership that extends beyond a single industry. As the driving force behind Pioneer’s presence across real estate and automotive, and through his association with Delhi Public School Amaravati, his work spans the spaces that shape how a city lives, moves and grows. His business interests bring together real estate and automotive brands including Mahindra, TVS and Kia, alongside emerging electric mobility. His involvement in education adds another dimension to that journey, contributing to the development of the next generation. What connects these ventures is a long-term view of building institutions, not simply businesses, and contributing to the evolution of Guntur and the wider region.',
   },
   {
-    name: 'Kappidapu Ramakrishna',
+    name: 'Karpurapu Ramakrishna',
     role: 'Managing Partner · K.R & Co',
     sectors: ['Tobacco Trade'],
     bio: 'With over 15 years of experience in global tobacco trade, Ramakrishna brings deep expertise in international markets, cross-border operations and strategic expansion. His work focuses on identifying opportunities across competitive global markets, building resilient supply networks and creating sustainable pathways for market entry and growth. As he continues to steer K.R. & Co., his approach remains grounded in long-term value creation, strong international partnerships and operational excellence. His journey reflects the perspective of a leader who understands that sustainable growth is not simply about entering new markets, but about building the capabilities and relationships required to succeed in them.',
@@ -78,13 +78,13 @@ const members: Member[] = [
     bio: 'As a unit of Land Marshal, Land Marshal Chemicals has built its presence in South India’s chemical industry through high-performance construction chemicals and customised formulations designed around specific project requirements. Its focus extends beyond supplying products to understanding the challenges faced by builders, engineers and architects and developing solutions that respond to them. With a strong emphasis on relationships and collaboration, the business continues to build connections across the construction ecosystem, bringing technical capability and industry understanding together to support better project outcomes.',
   },
   {
-    name: 'Burri Vineetha',
+    name: 'Batchu Vineetha',
     role: 'Founder · Sure Interiors',
     sectors: ['Interior Design'],
     bio: 'The design force behind Sure Interiors, known for creating spaces that move comfortably from refined minimalism to large-scale, detail-intensive projects. Her work spans residential, commercial and retail interiors, where aesthetics are balanced with functionality and thoughtful execution. From understated spaces where simplicity becomes the defining character to ambitious projects that demand scale, coordination and precision, she brings the same design discipline to every brief. Through Sure Interiors, she continues to explore how contemporary design, evolving technology and practical thinking can come together to create spaces that are not only visually distinctive, but purposeful and built to last.',
   },
   {
-    name: 'Muppiri Srujana',
+    name: 'Mulpuri Srujana',
     role: 'Franchise owner · Lakme salons',
     sectors: ['Beauty & Wellness'],
     bio: 'Srujana is building her presence in the beauty and wellness industry with a simple belief: beauty is not just about appearance, it is something to be cared for. As the franchise owner of Lakmé Salon in Guntur and Vijayawada, and two Naturals salons in Hyderabad, she brings together brand-led standards with a personal understanding of what clients seek from modern beauty spaces. Her journey reflects a growing presence across multiple cities and a commitment to creating experiences where professional care, consistency and trust remain at the centre of beauty.',
@@ -144,8 +144,8 @@ const members: Member[] = [
     bio: 'Electrical infrastructure is one of those businesses that quietly keeps a city moving. Pradeep Jain has built Elite Electricals in Guntur around that essential role, serving customers with electrical hardware and products across a category where quality, reliability and availability matter every day. Established in 2013, the business has grown its presence in Brodipet by staying closely connected to customer requirements and the evolving needs of the electrical market. Through Elite Electricals, Pradeep brings a practical understanding of the industry and a business built around dependable products, relationships and consistent service.',
   },
   {
-    name: 'Kotha Nikhila',
-    role: 'Chief Operations officer · Venkata Durga Iron & Hardware Merchants',
+    name: 'Kota Mohith',
+    role: 'Managing Partner · Venkata Durga Iron & Hardware Merchants',
     sectors: ['Hardware & Plywood'],
     bio: 'Built over a century and carried across five generations, this hardware and plywood business represents the enduring value of trust, consistency and relationships. By combining traditional business values with modern management practices, the organisation has built a strong reputation for quality products and dependable service across the construction and interior design sectors. Its journey reflects a simple principle: a legacy is not preserved by standing still. It is strengthened by evolving with the needs of every generation while holding on to the standards that earned trust in the first place. Today, the focus remains on building the next chapter of a legacy defined by quality, reliability and customer trust.',
   },
@@ -170,7 +170,7 @@ const members: Member[] = [
   {
     name: 'Dr. M. Vinod Kumar',
     role: 'Orthopaedician & Joint Replacement Surgeon · Amrutha Hospitals',
-    sectors: ['Healthcare / Orthopaedics'],
+    sectors: ['Healthcare / Orthopaedician'],
     bio: 'Dr. M. Vinod Kumar represents a generation of healthcare leaders who see medicine not only as a profession, but as an institution-building responsibility. As an orthopaedic specialist and a key figure behind Amrutha Hospitals, he has helped build a healthcare institution in Guntur around specialist expertise, modern medical infrastructure and accessible patient care. His work in orthopaedics, including joint replacement, sits alongside a broader vision for comprehensive healthcare through Amrutha Hospitals, which today brings multiple specialist departments and advanced care under one roof.',
   },
 ];
