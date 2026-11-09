@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState, useEffect, useRef } from 'react';
-import { Menu, X, ChevronDown, Instagram, Youtube, Facebook, ArrowUpRight } from 'lucide-react';
+import { Menu, X, ChevronDown, Instagram, Youtube, Facebook, Linkedin, ArrowUpRight } from 'lucide-react';
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'framer-motion';
 const logo = '/nia-logo-guntur-trim.png';
 
@@ -25,6 +25,7 @@ const socials = [
   { label: 'Instagram', href: 'https://www.instagram.com/networkinactionguntur/', Icon: Instagram },
   { label: 'YouTube', href: 'https://www.youtube.com/@networkinactionguntur', Icon: Youtube },
   { label: 'Facebook', href: 'https://www.facebook.com/profile.php?id=61577547012330', Icon: Facebook },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/company/network-in-action-guntur/', Icon: Linkedin },
 ];
 
 const spring = { type: 'spring' as const, stiffness: 420, damping: 34 };
