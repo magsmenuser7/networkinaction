@@ -151,10 +151,10 @@ const members: Member[] = [
     bio: 'Built over a century and carried across five generations, this hardware and plywood business represents the enduring value of trust, consistency and relationships. By combining traditional business values with modern management practices, the organisation has built a strong reputation for quality products and dependable service across the construction and interior design sectors. Its journey reflects a simple principle: a legacy is not preserved by standing still. It is strengthened by evolving with the needs of every generation while holding on to the standards that earned trust in the first place. Today, the focus remains on building the next chapter of a legacy defined by quality, reliability and customer trust.',
   },
   {
-    name: 'Vakkanti Prasanth',
+    name: 'Yakkanti Prasanth',
     role: 'Co-Founder · Stuff Mama',
-    sectors: ['Hospitality'],
-    bio: 'Vakkanti Prasanth is the co-founder and driving force behind Stuff Mama, a fast-growing restaurant brand that has expanded to 15+ franchise outlets and five company-owned outlets across Hyderabad. His work with Stuff Mama reflects his ability to take a food concept beyond a single location and build it into a scalable business. With a strong focus on expansion, operational discipline and consistency across outlets, he continues to build Stuff Mama as a brand with the potential to grow across markets while retaining the character that made it successful.',
+    sectors: ['Retail – Party & Entertainment Essentials'],
+    bio: 'Yakkanti Prasanth is the co-founder and driving force behind Stuff Mama, a fast-growing restaurant brand that has expanded to 15+ franchise outlets and five company-owned outlets across Hyderabad. His work with Stuff Mama reflects his ability to take a food concept beyond a single location and build it into a scalable business. With a strong focus on expansion, operational discipline and consistency across outlets, he continues to build Stuff Mama as a brand with the potential to grow across markets while retaining the character that made it successful.',
   },
   {
     name: 'Praveen Yaganti',
